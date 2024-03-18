@@ -1,0 +1,109 @@
+
+<app-topbar></app-topbar>
+<app-navbar></app-navbar>
+<div class="container-xxl py-5">
+    <div class="container">
+       
+   <div class="row">
+        <div class="col-lg-6 col-md-12 wow fadeInUp">
+            <h1>Welcome to </h1>
+            <h1>  our website </h1>
+          
+          <br>
+          <h6>Here, we believe that building a strong professional network begins with your participation. 
+              </h6>
+          <br>
+          <h6>We are delighted to offer a modern and user-friendly service to ensure you have the best experience..</h6>
+          <h6>
+              <!-- Utilise une icône de flèche à droite, de petite taille, de couleur violette -->
+              <i class="fas fa-arrow-right fa-xs" style="color: #FF6F61;"></i>
+              <!-- Crée un lien vers la page d'accueil de l'application -->
+              <a routerLink="/" style="color: #FF6F61;">View Home page</a>
+          </h6>
+          <img src="./assets/Image/login.png" style="height: 190px;width: 400px
+          ; margin-left: 20px;margin-top: 10px;margin-bottom: 50px;">
+
+
+        </div>
+
+        <div class="col-lg-6 col-md-12">
+            <div class="wow fadeInUp" data-wow-delay="0.2s">
+                
+                <form  [formGroup]="SignUpForm"(ngSubmit)="OnSignUp()">
+                    <h5>Sign Up</h5>
+                    <div class="row g-3">
+                        <div class="col-md-12">
+                            <div class="form-floating">
+                                <input type="text"formControlName="username"required class="form-control"placeholder="User Name " id="userName" ><br/>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-floating">
+                                <input type="email"formControlName="email"required class="form-control"placeholder="Email " id="email" > <br/>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-floating">
+                                <input type="text"formControlName="NumTel"required class="form-control"placeholder="phone" id="NumTel" ><br/>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-floating">
+                                <input  type="text"formControlName="CIN"required class="form-control"placeholder="CIN " id="CIN" >                                <br/>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-floating">
+                                <input type="text"formControlName="address"required class="form-control"placeholder="address" id="address" ><br/>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-floating">
+                                <input type="text" formControlName="Compte"required class="form-control"placeholder="Compte " id="Compte" >
+                            
+                            <br>
+                        </div>
+                        </div>
+                   
+                        <div class="col-12">
+                            <div class="form-floating">
+                                
+                                <input type="radio" formControlName="role" id="CLIENT" name="role" value="CLIENT">
+                                  <label for="html">CLIENT</label>
+                                  <input type="radio"  name="role" value="ADMIN">
+                                  <label for="css">ADMIN</label><br>
+        
+                            
+                            </div>
+                        </div>
+
+
+                        <div class="col-12">
+                            <button type="submit"  required class="colorBackgroundMove">Sign up </button></div>
+                    </div>
+                </form>
+                <div class="connect">
+                    <div class="tex">
+                        <span> <hr>  Or connect with <hr></span>
+                    </div>
+                    <div class="conv">
+                        <a href="https://www.facebook.com" target="_blank" class="dr">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="https://www.google.com" target="_blank" class="dr">
+                            <i class="fab fa-google"></i>
+                        </a>
+                        <a href="https://www.github.com" target="_blank" class="dr">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+    
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<app-footer></app-footer>

@@ -1,0 +1,21 @@
+<header>
+    <div class="navbar navbar-dark shadow-sm" style=" background-color: #FF6F61;">
+        <div class="navbar-brand align-item-center d-flex">
+            <i style="font-size: 40px;" class="fas fa-shipping-fast">&nbsp;
+                
+            </i>
+            <strong style="font-size: 30px;">E-SHOP</strong>
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="search products" [(ngModel)]="searchInput" >
+
+            </div>
+            <button class="fas fa-search search-icon" style="background-color: white;"(click)="searchproduct(searchInput)"></button>
+
+
+        </div>
+        <button routerLink="/cart" class="btn"style=" background-color: #FF6F61;">
+            <i style="font-size: 30px;" class="fas fa-cart-plus "></i>
+            <div style="font-size: 10px;" class="badge bg-light">{{item}}</div>
+        </button>
+    </div>
+</header>

@@ -1,0 +1,86 @@
+
+<app-topbar></app-topbar>
+<app-navbar></app-navbar>
+<div class="container-xxl py-5">
+    <div class="container">
+        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+            <h1 class="mb-5 text-dark">contact us</h1>
+        </div>
+   <div class="row">
+        <div class="col-lg-6 col-md-12 wow fadeInUp">
+            <h5>Get In Touch</h5>
+            <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos</p>
+            <div class="d-flex align-items-center mb-4">
+                <div class="d-flex align-items-center justify-content-center flex-shrink-0 " style="width: 50px; height: 50px;background-color: #FF6F61;">
+                    <i class="fa fa-map-marker-alt"></i>
+                </div>
+                <div class="ms-3">
+                    <h5 class="text-dark">Office</h5>
+                    <p class="mb-0">7105 Reisterstown Road Baltimore</p>
+                </div>
+            </div>
+            <div class="d-flex align-items-center mb-4">
+                <div class="d-flex align-items-center justify-content-center flex-shrink-0 " style="width: 50px; height: 50px;background-color: #FF6F61;">
+                    <i class="fa fa-phone"></i>
+                </div>
+                <div class="ms-3">
+                    <h5  class="text-dark">Mobile</h5>
+                    <p class="mb-0">+012 345 6789 </p>
+                </div>
+            </div>
+            <div class="d-flex align-items-center">
+                <div class="d-flex align-items-center justify-content-center flex-shrink-0" style="width: 50px; height: 50px;background-color: #FF6F61;">
+                    <i class="fa fa-envelope"></i>
+                </div>
+                <div class="ms-3">
+                    <h5  class="text-dark">Email</h5>
+                    <p class="mb-0">info&#64;example.com</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-6 col-md-12">
+            <div class="wow fadeInUp" data-wow-delay="0.2s">
+                <form  (ngSubmit)="addcontact()" [formGroup]="ContactForm">
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <div class="form-floating">
+                                <input type="text" class="form-control" id="name" placeholder="Your Name" formControlName="name" required>
+                                <br/>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-floating">
+                                <input type="email" class="form-control" id="email" placeholder="Your Email"   formControlName="email" required>
+                              <br/>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-floating">
+                                <input type="text" class="form-control" id="subject" placeholder="Subject"  formControlName="subject" required>
+                             <br/>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-floating">
+                                <input type="text" class="form-control" id="phone" placeholder="Your Phone" formControlName="phone" required>
+                                <br/>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-floating">
+                                <textarea class="form-control" placeholder="Leave a message here" id="message" style="height: 100px" formControlName="message" required></textarea>
+                               <br/>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <button class="btn  w-100 py-3" style="background-color: #FF6F61;" type="submit">Send Message</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<app-footer></app-footer>

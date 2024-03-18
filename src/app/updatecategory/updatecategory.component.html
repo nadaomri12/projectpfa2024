@@ -1,0 +1,16 @@
+
+<div class="container">
+    <h2>Update Category</h2>
+    <form >
+      <div class="form-group">
+        <label for="titre">Name of Category :</label>
+        <input type="text" class="form-control" id="titre" name="titre" [(ngModel)]="category.nomCatalogue" required>
+      </div>
+      
+      
+      <button type="submit" class="btn " (click)="updatecategory()" style="background-color: #FF6F61;">Update Category</button>
+    </form>
+  </div>
+  
+  
+  
