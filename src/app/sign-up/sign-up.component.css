@@ -1,3 +1,4 @@
+
 .container{
     display: flex;
     justify-content: space-between; /* Ajoute de l'espace entre les éléments */
@@ -78,7 +79,7 @@ margin-right: 10px;}
     }
    
     .conv a {
-        color: #FF6F61
+        color:  #FF6F61
 ;
         margin: 0 10px;
     }
@@ -89,7 +90,7 @@ margin-right: 10px;}
     }
     .boutonAlign{
         display: flex;
-        justify-content:center ;
+        justify-content: flex-end ;
 
     }
     .colorContourMove{
@@ -116,27 +117,3 @@ margin-right: 10px;}
     outline: none;
 }
 
-.show-password-button .fa {
-    font-size: 18px;
-    /* Adjust the icon size as needed */
-    color: #888;
-    /* Adjust the icon color */
-}
-.show-password2-button .fa {
-    font-size: 18px;
-    /* Adjust the icon size as needed */
-    color: #888;
-    /* Adjust the icon color */
-}
-
-.show-password2-button{
-    position: absolute;
-    top: 71%;
-    right: 160px;
-    transform: translateY(-50%);
-    border: none;
-    background: none;
-    cursor: pointer;
-    padding: 0;
-    outline: none;
-}

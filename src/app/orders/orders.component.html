@@ -23,26 +23,26 @@
                 <li><a routerLink="/admin/newsletter" >Newsletter</a></li>
                 
                 <li><a routerLink="/admin/productaadmin">Articles</a></li>
-                <li><a routerLink="/admin/contactadmin" >AllContact</a></li>
+                <li><a routerLink="/admin/contactadmin" >Contacts</a></li>
 
-                <li><a routerLink="/admin/orders" style="color:#FF6F61;">Orders</a></li>
+                <li><a routerLink="/admin/orders" style="color:#FF6F61;">Commandes</a></li>
                 
 
-                <li><a routerLink="/admin/aboutclient">AllUser</a></li>
+                <li><a routerLink="/admin/aboutclient">Utilisateurs</a></li>
             </ul>
         </div>
  
   
 
     <div class="main-content">
-        <h1 style="color: #2B3674; text-align: center;">User’s Orders</h1>
+        <h1 style="color: #2B3674; text-align: center;">Commandes des utilisateurs</h1>
       
         <table>
             <thead>
                 <tr> 
-                    <th>OrderNum</th> 
+                    <th>NumCommande</th> 
                     <th>Date</th>
-                    <th>Client'sId</th>
+                    <th>Email du client</th>
                     <th>Etat</th>
                     <th>Action</th>
 
@@ -50,18 +50,19 @@
 
                 </tr>
             </thead>
-                <tbody>
+                <tbody *ngFor="let commandes of commandes">
                     
                     <tr >
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td>{{commandes.numcom}}</td>
+                        <td>{{commandes.date}}</td>
+                        <td>{{commandes.client.email}}</td>
+                        <td>{{commandes.etat}}</td>
+                       
                         
                         <td>
 
-                            <button class="btn btn-sm" style="background:#FF6F61; margin-right: 15px;" ><i class="fa fa-trash"></i></button>
-                            <button class="btn btn-sm"  style="background:#FF6F61;" ><i class="fa fa-eye" ></i></button>
+                        
+                            <button class="btn btn-sm"  style="background:#FF6F61;" (click)="openPopup(commandes.numcom)" ><i class="fa fa-eye" ></i></button>
 
                            </td>
                             
@@ -77,7 +78,31 @@
        
     </div>
     
-
+    <div *ngIf="showPopup" class="popup">
+        <div class="popup-content">
+            <span class="close"(click)="closePopup()" >&times;</span>
+            
+            <h3> <span><i class="fa-pencil-square-o "></i></span> Changer l'etat du commande</h3>
+         
+                 
+            <div class="card-body">
+                
+                <div class="form-check form-check-inline">
+                    <input type="radio" class="form-check-input" name="etatCheck" [(ngModel)]="etat" value="traite">
+                    <label class="form-check-label">Traité</label>
+                    
+                    <input type="radio" class="form-check-input" name="etatCheck" [(ngModel)]="etat" value="nontraite">
+                    <label class="form-check-label">Non traité</label>
+                </div>
+            </div>
+          
+            <button   class="send-button" (click)="updatecommande()">Changer</button>
+        </div>
+    </div>
 </div>
+
+
+
+
 </body>
 

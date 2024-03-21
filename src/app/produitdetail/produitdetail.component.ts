@@ -12,16 +12,19 @@ import {CartserviceService}from'../services/cartservice.service';
 export class ProduitdetailComponent implements OnInit  {
   id:any;
  product:any;
+idclient:any
  Review: any={
   message:'',
   author:'',
   authoremail:''
 
  }
+ 
+
  quantity:number=1;
   constructor(private route:ActivatedRoute,private Service:SerrviceService,private cartservice:CartserviceService){
    this.id=this.route.snapshot.paramMap.get("id");
-  
+   this.idclient = localStorage.getItem('clientId');
  }
  getproductbyid(){
   this.Service.getproduitbyid(this.id).subscribe((data) => this.product = data);
@@ -69,6 +72,27 @@ decrementQuantity() {
   }
 }
 
+ addtocart(){
+
+  const item = {
+    idclient: this.idclient,
+    quantity: this.quantity,
+    productid: this.id 
+  };
+  console.log(item)
+  this.cartservice.AddtooCart(item).subscribe(
+    response => {
+      alert("item added to cart successfully ")
+      
+      console.log('item added to cart', response);
+      
+    },
+    error => {
+      console.error('Error adding item to cart', error);
+     
+    }
+  );
+}
 
 
 ngOnInit() {

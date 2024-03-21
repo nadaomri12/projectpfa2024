@@ -83,9 +83,7 @@ export class CartserviceService {
       return grandTotal + (item.price*item.quantity);
     }, 0);
   }
-  
 
-  
   removeAllCart() {
     // Mettre à jour le BehaviorSubject avec un tableau vide
     this.cartItemList.next([]);
@@ -93,13 +91,42 @@ export class CartserviceService {
     // Sauvegarder les données du panier dans le stockage local après chaque modification
     localStorage.setItem('cartItems', JSON.stringify([]));
   }
-
-
   getcartItemList(): Observable<any[]> {
     return this.cartItemList$;
   }
-
+ ///minhna yabda code s7i7 bl api backend
  
-  
+  AddtooCart(item:any): Observable<any> { 
+    return this.http.post<any>('http://localhost:8080/api/additem' ,item);
+  }
+ 
+
+  getCartbyid(id:any)
+  {
+    return this.http.get('http://localhost:8080/api/cart/'+id)
+  }
+ removeitemfromcart(idclient:any,idproduct:any){
+  return this.http.delete('http://localhost:8080/api/removeitem/'+idclient+'/'+idproduct)
+ }
+ removeAllItem(idclient:any){
+  return this.http.delete('http://localhost:8080/api/removeallitem/'+idclient)
+ }
+ addcommande(commande:any){
+  return this.http.post('http://localhost:8080/api/addcommande',commande)
+ }
+ getcommandes(){
+  return this.http.get('http://localhost:8080/api/commandes')
+ }
+
+ getcommandebyid(idcom:any){
+  return this.http.get('http://localhost:8080/api/commande/'+idcom)
+ }
+ getfacturebyid(id:any){
+  return this.http.get('http://localhost:8080/api/commande/'+id)
+ }
+
+ updateCommande(data:any){
+   return this.http.put('http://localhost:8080/api/update',data)
+ }
 
 }

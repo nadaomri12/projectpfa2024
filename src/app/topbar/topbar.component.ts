@@ -9,10 +9,13 @@ import { Router } from '@angular/router';
   styleUrls: ['./topbar.component.css']
 })
 export class TopbarComponent implements OnInit {
-  item: any;
+  item: number=0;
   searchInput: any;
-
-  constructor(private cartService: CartserviceService, private productService: SerrviceService, private router: Router) {}
+ idclient:any
+ cart:any
+  constructor(private cartService: CartserviceService, private productService: SerrviceService, private router: Router) {
+    this.idclient = localStorage.getItem('clientId');
+  }
 
   
   searchproduct(productName: any) {
@@ -30,11 +33,19 @@ export class TopbarComponent implements OnInit {
       }
     )
   }
-  
+  getcartbyid() {
+    this.cartService.getCartbyid(this.idclient).subscribe((cart: any) => {
+      // Vérifiez si cartitems est un objet, convertissez-le en tableau si nécessaire
+      if (!Array.isArray(cart.cartitems)) {
+        cart.cartitems = [cart.cartitems];
+        
+      }
+      this.item=cart.cartitems.length;
+      this.cart = cart;
+    });
+  }
 
   ngOnInit(): void {
-    this.cartService.getcartItemList().subscribe(res => {
-      this.item = res.length;
-    });
+    this.getcartbyid()
   }
 }

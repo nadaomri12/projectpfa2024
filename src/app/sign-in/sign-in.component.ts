@@ -55,6 +55,7 @@ import { FormBuilder,FormGroup,Validators } from '@angular/forms';
             alert("Login Success"); // Affiche un message d'alerte avec le message de succès de la réponse
             localStorage.setItem('clientId', res.userId); // Stocke l'ID du client dans le stockage local du navigateur
             console.log("clientid",res.userId)
+        
             this.loginForm.reset(); // Réinitialise le formulaire de connexion
   
             this.router.navigate(['']); // Redirige l'utilisateur vers la page d'accueil après la connexion réussie
