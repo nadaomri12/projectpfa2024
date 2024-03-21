@@ -26,6 +26,7 @@ import { DatePipe } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 
 import { NgToastModule, NgToastService } from 'ng-angular-popup';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 import { ToastrModule } from 'ngx-toastr';
 import { ContactComponent } from './contact/contact.component';
@@ -43,6 +44,7 @@ import { AuthAdminlayoutComponent } from './auth-adminlayout/auth-adminlayout.co
 import { LayoutModule } from './layout/layout.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { OrdersComponent } from './orders/orders.component';
+import { ArticleFiltrerPipePipe } from './article-filtrer-pipe.pipe';
 
 
 @NgModule({
@@ -76,7 +78,8 @@ import { OrdersComponent } from './orders/orders.component';
     ContactadminComponent,
     AuthAdminlayoutComponent,
     DashboardComponent,
-    OrdersComponent
+    OrdersComponent,
+    ArticleFiltrerPipePipe,
     
   ],
   imports: [
@@ -89,7 +92,7 @@ import { OrdersComponent } from './orders/orders.component';
     FormsModule,
    SlickCarouselModule,
     ReactiveFormsModule,
-
+    NgxPaginationModule,
     AppRoutingModule,
     FormsModule,
     ToastrModule.forRoot(), // Ajoutez ToastrModule.forRoot() dans les imports de votre module principal

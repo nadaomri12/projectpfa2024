@@ -6,11 +6,13 @@
 
 .signin-form{
     margin-top: 150px;
+    margin-left: 100px;
 }
 .left-content{
     margin-top: 100px;
 
 }
+
 html, body {
     height: 100%;
 }
@@ -29,7 +31,7 @@ padding-bottom: 12PX;
 padding-left: 12px;
 padding-right: 12px;
 border-radius: 30px;
-margin-left: 25px;
+margin-left: 16px;
 margin-top: 40PX;
 height: 40px;
 width: 200PX;
@@ -40,7 +42,7 @@ width: 200PX;
         background-color: #FBFBFB;
         border-radius: 12px;
     margin-top: 12px;
-margin-right: 10px;}
+   margin-right: 10px;}
 .signin-form {
     padding: 20px;
     border-radius: 5px;
@@ -61,9 +63,12 @@ margin-right: 10px;}
 }
 
 .form-control {
-    width: 100%; /* Largeur des champs */
-    padding: 10px;
-    border-radius: 5px;
+    width: 500px;
+    padding: 12px; /* Augmenter la taille du rembourrage */
+    font-size: 18px; /* Augmenter la taille de la police */
+    border-radius: 10px;
+    height: 50px;
+    border-color: #FF6F61;
 }.tex{
     text-align: center;
     }
@@ -106,8 +111,8 @@ margin-right: 10px;}
     
 .show-password-button {
     position: absolute;
-    top: 50%;
-    right: 160px;
+    top: 45%;
+    right:  180px;
     transform: translateY(-50%);
     border: none;
     background: none;
@@ -122,3 +127,10 @@ margin-right: 10px;}
     color: #888;
     /* Adjust the icon color */
 }
+.tex{
+    margin-left: 120px;
+}
+.conv{
+    margin-left: 120px;
+}
+

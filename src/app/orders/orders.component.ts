@@ -19,6 +19,10 @@ export class OrdersComponent {
     
   }
 
+  closePopup(): void {
+    this.showPopup = false;
+   
+  }
   openPopup(id: any): void {
     this.id = id; // Affectez la valeur de l'ID passé en paramètre à this.id
     this.showPopup = true;
@@ -28,13 +32,10 @@ export class OrdersComponent {
     });
   }
   
-  closePopup() {
-    this.showPopup = false;
-}
-
+  
 updatecommande() {
   this.data  = {
-    id: this.id, // ID de la commande
+  numcom: this.id, // ID de la commande
     etat: this.etat // État à mettre à jour
   };
  console.log(this.data)
@@ -43,7 +44,7 @@ updatecommande() {
       console.log('État de la commande mis à jour avec succès', response);
       this.router.navigate(['/admin/orders']);
       alert('État de la commande a été modifié avec succès');
-      
+      this.closePopup()
     },
     (error) => {
       console.error('Erreur lors de la mise à jour de la commande', error);

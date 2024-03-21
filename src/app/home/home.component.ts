@@ -35,6 +35,7 @@ export class HomeComponent implements OnInit {
 
  
  onSubmit() {
+  console.log("hello")
   console.log( this.emailForm.value); // Afficher l'e-mail dans la console (à remplacer par l'envoi au serveur)
    // Récupérer la valeur de l'e-mail à partir du formulaire
 
@@ -42,6 +43,8 @@ export class HomeComponent implements OnInit {
     const email = this.emailForm.value.email; // Récupérer la valeur de l'e-mail à partir du formulaire
     console.log('Email submitted:', email); // Afficher l'e-mail dans la console (à remplacer par l'envoi au serveur)
     const userId = localStorage.getItem('clientId'); // Récupérer l'ID de l'utilisateur depuis le stockage local
+    console.log(userId)
+    
     if (!userId) { // Vérifie si l'ID de l'utilisateur n'est pas présent dans le stockage local
       console.error('User ID not found in local storage'); // Affiche une erreur dans la console
       return; // Sort de la fonction sans exécuter la requête
@@ -49,8 +52,10 @@ export class HomeComponent implements OnInit {
 
     // Si l'ID de l'utilisateur est présent dans le stockage local, procéder à l'envoi de la demande
     this.auth.subscribeEmail(+userId, email).subscribe( // Appelle la méthode subscribeEmail du service auth avec l'ID converti en nombre et l'adresse e-mail
-      (response) => { // Fonction de rappel en cas de succès de la requête
-        alert("Email Subscription Successful"); // Affiche un message d'alerte avec le message de succès de la réponse
+
+    (response) => { // Fonction de rappel en cas de succès de la requête
+
+      alert("Email Subscription Successful"); // Affiche un message d'alerte avec le message de succès de la réponse
 
         // Traitez la réponse de l'API si nécessaire
       },
@@ -65,4 +70,3 @@ export class HomeComponent implements OnInit {
 
 
 }
-

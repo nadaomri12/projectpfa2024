@@ -158,6 +158,23 @@ a {
 .product-item .product-price h3 span {
     font-size: 16px;
 }
+.form-control {
+    border-radius: 3px;
+    width: 600px;
+    margin-left: 750px;
+}
+.form-control2 {
+    border-radius: 3px;
+    width: 120px;
+    height: 30px;
+}
+.search-icon {
+    position: absolute;
+   
+    left: 90%;
+    top: 20px;
+    color: #FF6F61;
+}
 
 .product-item .product-price .btn {
     float: right;
@@ -186,6 +203,7 @@ a {
 
 .sidebar-widget {
     padding: 30px;
+    width:60px; /* Réduire la largeur de la sidebar */
     background: #ffffff;
 }
 
@@ -227,51 +245,14 @@ a {
 }
 
 
-.sidebar-widget.brands ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
 
-.sidebar-widget.brands ul li {
-    margin-bottom: 12px; 
-}
-
-.sidebar-widget.brands ul li:last-child {
-    margin-bottom: 0; 
-}
-
-.sidebar-widget.brands ul li a {
-    color: #353535;
-    white-space: nowrap;
-    display: inline-block;
-    line-height: 23px;
-    transition: all .3s;
-}
-
-.sidebar-widget.brands ul li a::before {
-    content: '\f105';
-    font-family: 'Font Awesome 5 Free';
-    font-weight: 900;
-    padding-right: 5px;
-}
-
-.sidebar-widget.brands ul li a:hover {
-    color: #FF6F61;
-}
-
-.sidebar-widget.brands ul li a:hover::before {
-    content: '\f101';
-    font-family: 'Font Awesome 5 Free';
-    font-weight: 900;
-}
-
-.sidebar-widget.brands ul li a:hover {
-    padding-left: 10px; 
+.flex{
+    display: flex;
+    margin-right: 100px;
+    
 }
 
 
-
-.sidebar-widget.widget-slider {
-    position: relative;
+.product-view{
+    margin-top: 50px;
 }

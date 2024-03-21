@@ -1,93 +1,68 @@
-
-<app-topbar></app-topbar>
 <app-navbar></app-navbar>
+<br>
+<br>
+<br>
+<header>
+    <div class="navbar navbar-dark shadow-sm">
+        <div class="flex">
+            <label for="categorySelect" class="mr-2">Catégories</label>
+            <select id="categorySelect" class="form-control2" (change)="filtercategory($event)">
+                <option value="All" selected>All</option>
+                <option  value="{{category.nomCatalogue}}"*ngFor="let category of categories" >{{category.nomCatalogue}}</option>
+            </select>
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="search products" [(ngModel)]="filterText" >
+
+            </div>
+            <button class="fas fa-search search-icon" style="background-color: white;"(click)="searchproduct2(searchInput)"></button>
 
 
+        </div>
+        
+    </div>
+</header>
 
- <div class="product-view">
+
+<br>
+
+<div class="product-view">
     <div class="container-fluid">
         <div class="row">
-             <div class="col-lg-8">
+            <div class="col-lg-12">
                 <div class="row">
-                 <div class="col-md-4" *ngFor="let product of products" >
-                            <div class="product-item">
-                                <div class="product-title">
-                                    <a routerLink="/detailproduit/{{product.id}}">{{product.nomProduit}}</a>
-                                    <div class="ratting">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                    </div>
+                    <div class="col-md-3" *ngFor="let product of (products | articleFiltrerPipe: filterText) | paginate: { itemsPerPage: (pages === 1) ? 8: 8, currentPage: pages, id: paginationId }">
+                        <!-- Affichez vos produits ici -->
+                        <div class="product-item">
+                            <div class="product-title">
+                                <a routerLink="/detailproduit/{{product.id}}">{{product.nomProduit}}</a>
+                                <div class="ratting">
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
                                 </div>
-                                <div class="product-image">
-                                    <a routerLink="/detailproduit/{{product.id}}">
-                                        <img src="{{product.image}}" alt="Product Image">
-                                    </a>
-                                            <div class="product-action">
-                                                <a href="#"><i class="fa fa-cart-plus"></i></a>
-                                                <a href="#"><i class="fa fa-heart"></i></a>
-                                                <a href="#"><i class="fa fa-search"></i></a>
-                                            </div>
+                            </div>
+                            <div class="product-image">
+                                <a routerLink="/detailproduit/{{product.id}}">
+                                    <img src="{{product.image}}" alt="Product Image">
+                                </a>
+                                <div class="product-action">
+                                    <a href="#"><i class="fa fa-cart-plus"></i></a>
+                                    <a href="#"><i class="fa fa-heart"></i></a>
+                                    <a href="#"><i class="fa fa-search"></i></a>
                                 </div>
-                                <div class="product-price">
-                                    <h3><span>$</span>{{product.prix}}</h3>
-                                    <a class="btn" routerLink="/detailproduit/{{product.id}}" ><i class="fa fa-shopping-cart"  ></i>Buy Now</a>
-                                </div>
-                        
+                            </div>
+                            <div class="product-price">
+                                <h3><span>$</span>{{product.prix}}</h3>
+                                <a class="btn" (click)="addtocart(product)" ><i class="fa fa-shopping-cart"  ></i>Buy Now</a>
                             </div>
                         </div>
-
-
+                    </div>
                 </div>
-                <div class="col-md-12">
-                    <nav aria-label="Page navigation example">
-                        <ul class="pagination justify-content-center">
-                            <li class="page-item disabled">
-                                <a class="page-link" href="" tabindex="-1">Previous</a>
-                            </li>
-                            <li class="page-item active"><a class="page-link" href="">1</a></li>
-                            <li class="page-item"><a class="page-link" href="">2</a></li>
-                            <li class="page-item"><a class="page-link" href="">3</a></li>
-                            <li class="page-item">
-                                <a class="page-link" href="">Next</a>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
+            </div>
         </div>
-        <div class="col-lg-4 sidebar bg-light">
-            <div class="sidebar-widget category">
-                
-                <nav class="navbar bg-light">
-                    <label for="categorySelect" class="mr-2">Category:</label>
-                    <select id="categorySelect" class="form-control" (change)="filtercategory($event)">
-                        <option value="All" selected>All</option>
-                        <option  value="{{category.nomCatalogue}}"*ngFor="let category of categories" >{{category.nomCatalogue}}</option>
-                    </select>
-                </nav>
-            </div>
-            
-            
-            <div class="sidebar-widget brands">
-                                    <h2 class="title">Our Brands</h2>
-                                    <ul>
-                                        <li><a href="">MSI </a><span>(45)</span></li>
-                                        <li><a href="">LENOVO </a><span>(34)</span></li>
-                                        <li><a href="">DELL </a><span>(67)</span></li>
-                                        <li><a href="">ASUS</a><span>(74)</span></li>
-                                        <li><a href="">SAMSUNG </a><span>(89)</span></li>
-                                        
-                                    </ul>
-                                </div>
-            
-            
-            </div>
-            </div>
-            </div>
-            </div>
-            
-
-
+    </div>
+    <pagination-controls (pageChange)="pages = $event" [id]="paginationId"></pagination-controls>
+</div>
 <app-footer></app-footer>

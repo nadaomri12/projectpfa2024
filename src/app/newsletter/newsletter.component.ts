@@ -44,7 +44,6 @@ export class NewsletterComponent {
 
 
 sendNewsletter(){
-  
   const formData = new FormData();
   this.emailList.forEach(e => {
     formData.append('to', e);
@@ -55,12 +54,28 @@ sendNewsletter(){
     .subscribe({
       next: (response) => {
         console.log('Message envoyé avec succès !', response);
+        alert("Message envoyé avec succès !")
       },
       error: (error) => {
         console.error('Erreur lors de l\'envoi du message : ', error);
       }
     })
   }
+
+
+  deleteEmailSubscription(id: number): void {
+    this.auth.deleteEmailSubscription(id).subscribe(
+      () => {
+        alert('Email subscription deleted successfully');
+        // Réactualisez vos données si nécessaire après la suppression
+      },
+      error => {
+        console.error('Error deleting email subscription:', error);
+        alert('Failed to delete email subscription');
+      }
+    );
+  }
+
+
+
 }
-
-

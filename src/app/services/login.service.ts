@@ -42,7 +42,10 @@ getClient(id:any):Observable<any>{
   return this.http.get('http://localhost:8080/api/client/'+id)
 }
 getSubscribedUsers(): Observable<any[]> {
-  return this.http.get<any[]>('http://localhost:4200/api/subscribed');
+  return this.http.get<any[]>('http://localhost:8080/api/subscribed');
+}
+deleteEmailSubscription(id: number): Observable<void> {
+  return this.http.delete<void>(`http://localhost:8080/api/email/${id}`);
 }
 
 }

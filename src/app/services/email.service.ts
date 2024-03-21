@@ -15,11 +15,12 @@ export class EmailService {
 
   subscribeEmail(userId: number, emailSubscription: string): Observable<any> {
     const updateData = { emailSubscription: emailSubscription }; // Créez un objet contenant les données de mise à jour
-    return this.http.patch<any>(``, updateData);
+    return this.http.patch<any>(`http://localhost:8080/api/users/email/${userId}`, updateData);
   }
 
 
 
 
-}
 
+
+}
