@@ -3,12 +3,12 @@
 
 <ng-container *ngIf="cart.cartitems.length === 0">
     <div class="container">
-        <div class="card bg-light">
-            <h5 class="card-title">My Cart</h5>
+        <div class="carddd bg-light">
+            <h5 class="card-title"></h5>
             <div class="center">
-                <h4>Your cart is empty!</h4>
-                <h6>Add item to it now</h6>
-                <button routerLink="/product" class="btn" style="background-color: #FF6F61;">Shop Now</button>
+                <h4>Votre panier est vide!</h4>
+                <h6>Ajoutez-y un article maintenant</h6>
+                <button routerLink="/product" class="btn" style="background-color: #FF6F61;">Achetez maintenant</button>
             </div>
         </div>
     </div>
@@ -52,6 +52,23 @@
                     </tr>
                 </tbody>
             </table>
+            <br>
+            <button class="btn py-2 px-5" style="background:#FF6F61; padding: 10px; text-align: left;" (click)=" openPopup()">
+                <i class="fa fa-check"></i> Facture
+            </button>
         </div>
+
+        <div *ngIf="showPopup" class="popup">
+            <div class="popup-content">
+                <span class="close" (click)="closePopup()">&times;</span>
+                <h3><span><i class="fas fa-credit-card"></i></span> Votre  Facture</h3>
+                <div class="card-body">
+                    <h4 class="card-title"><i class="fa fa-credit-card"  style="color:#FF6F61"></i> Montant à payer:{{ commandes[0].facture.montantpayer }}</h4>
+                    <h5 class="card-title"><i class="fas fa-calendar-alt" style="color:#FF6F61"></i> Date du votre commande:{{ commandes[0].facture.date }}</h5>
+                </div>
+                <button class="send-button">Payer</button>
+            </div>
+        </div>
+        
     </div>
 </ng-container>

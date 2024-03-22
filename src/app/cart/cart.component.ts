@@ -16,9 +16,17 @@ export class CartComponent implements OnInit {
 
  idclient:any
  commandeDto: any;
+ commandes:any={
  
+  facture:{
+    numFac:'',
+    montantpayer:'0'
+  }
+ }
+ 
+idcommande:any
 
-
+showPopup: boolean = false;
 
   constructor(private cartservice: CartserviceService) {
     this.idclient = localStorage.getItem('clientId');
@@ -32,6 +40,7 @@ export class CartComponent implements OnInit {
       produits: [], // initialisation de produits
       qtCommande: [] // initialisation de qtCommande
     };
+    
    
   }
 
@@ -112,10 +121,31 @@ export class CartComponent implements OnInit {
     );
   }
 
+  openPopup(): void {
+    this.getcommandeclient();
+    
+    if (this.commandes && this.commandes.length > 0) { 
+        this.showPopup = true;
+    } else {
+        alert("Vous n'avez pas encore passé une commande.");
+    }
+}
+ 
+  closePopup(): void {
+    this.showPopup = false;
 
-
+    
+  }
+  getcommandeclient(){
+    console.log(this.idclient)
+    console.log(this.commandes)
+    this.cartservice.getcommandeclient(this.idclient).subscribe((data) => {
+      this.commandes = data; // Assurez-vous que la commande est correctement récupérée
+    });
+  }
   
   ngOnInit() {
     this.getcartbyid();
+    this.getcommandeclient()
   }
 }

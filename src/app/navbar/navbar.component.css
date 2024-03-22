@@ -5,7 +5,7 @@
     display: flex; /* Utiliser un conteneur flexible */
     align-items: center; /* Aligner les éléments verticalement */
     justify-content: flex-end; /* Aligner les éléments horizontalement à droite */
-    margin-left: 20px; /* Pour aligner les boutons à droite */
+    margin-left: 5px; /* Pour aligner les boutons à droite */
 }
 .navbar-toggler {
     border: none; 
@@ -19,7 +19,7 @@
         border-radius: 20px;
 
 
-width: 90px;
+width: 100px;
 height: 40px;
 }
 .blanc{

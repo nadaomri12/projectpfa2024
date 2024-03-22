@@ -29,6 +29,7 @@ export class OrdersComponent {
     // Récupérez les données de la commande à partir du service en utilisant l'ID
     this.cartservice.getcommandebyid(this.id).subscribe((data) => {
       this.commandes = data; // Assurez-vous que la commande est correctement récupérée
+      return(this.commandes)
     });
   }
   

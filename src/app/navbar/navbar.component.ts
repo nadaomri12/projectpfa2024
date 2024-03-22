@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component , OnInit} from '@angular/core';
 import { LoginService } from '../services/login.service';
 import { SerrviceService } from '../services/serrvice.service';
 import { CartserviceService } from '../services/cartservice.service';
@@ -8,16 +8,17 @@ import { Router } from '@angular/router';
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.css'
 })
-export class NavbarComponent {
+export class NavbarComponent implements OnInit{
   isLoggedIn: boolean = false;
   products: any; 
   item: number=0;
   searchInput: any;
   AfficheCard = false;
-  idclient:any
+  
   client: any; // Correction de l'attribut clients
   categories: any;
-  cart:any
+  idclient:any
+   cart:any
   constructor(private auth: LoginService, private service: SerrviceService,private cartService: CartserviceService, private router: Router) {
     this.idclient = localStorage.getItem('clientId');
    }
@@ -80,9 +81,8 @@ export class NavbarComponent {
       // Vérifiez si cartitems est un objet, convertissez-le en tableau si nécessaire
       if (!Array.isArray(cart.cartitems)) {
         cart.cartitems = [cart.cartitems];
-        
       }
-      this.item=cart.cartitems.length;
+      this.item=cart.cartitems.length; // Mettez à jour la valeur de item avec la longueur du tableau cartitems
       this.cart = cart;
     });
   }

@@ -125,6 +125,10 @@ export class CartserviceService {
   return this.http.get('http://localhost:8080/api/commande/'+id)
  }
 
+ getcommandeclient(id:any){
+  return this.http.get('http://localhost:8080/api/commande/client/'+id)
+ }
+
  updateCommande(data:any){
    return this.http.put('http://localhost:8080/api/update',data)
  }
