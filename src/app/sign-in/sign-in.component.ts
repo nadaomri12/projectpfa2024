@@ -58,7 +58,14 @@ import { FormBuilder,FormGroup,Validators } from '@angular/forms';
         
             this.loginForm.reset(); // Réinitialise le formulaire de connexion
   
-            this.router.navigate(['']); // Redirige l'utilisateur vers la page d'accueil après la connexion réussie
+
+
+            if (res.userId == 1) {
+              this.router.navigate(['/admin/dashboard']);
+          } else {
+            this.router.navigate(['']);
+          }
+            // Redirige l'utilisateur vers la page d'accueil après la connexion réussie
   
             this.isLoggedIn = true;
            
