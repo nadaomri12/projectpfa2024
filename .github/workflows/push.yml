@@ -1,0 +1,47 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build_and_deploy_frontend:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      
+      - name: Build and push frontend Docker image
+        uses: azure/docker-login@v1
+        with:
+          login-server: sitepfa.azurecr.io
+          username: ${{ secrets.ACR_USERNAME }}
+          password: ${{ secrets.ACR_PASSWORD }}y
+        run: docker push sitepfa.azurecr.io/frontend:${{ github.sha }}
+
+      
+      - name: Build frontend Docker image
+        run: docker build -t sitepfa.azurecr.io/frontend:${{ github.sha }} ./front
+      
+      - name: Push frontend Docker image to Azure Container Registr
+  build_and_deploy_backend:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      
+      - name: Build and push backend Docker image
+        uses: azure/docker-login@v1
+        with:
+          login-server: sitepfa.azurecr.io
+          username: ${{ secrets.ACR_USERNAME }}
+          password: ${{ secrets.ACR_PASSWORD }}
+      
+      - name: Build backend Docker image
+        run: docker build -t sitepfa.azurecr.io/backend:${{ github.sha }} ./backend
+      
+      - name: Push backend Docker image to Azure Container Registry
+        run: docker push sitepfa.azurecr.io/backend:${{ github.sha }}
+
+  

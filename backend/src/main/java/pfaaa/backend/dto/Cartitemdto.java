@@ -7,7 +7,7 @@ public class Cartitemdto {
     public Cartdto cartdto;
     public ProduitDto produit;
 
-    public Long idcart;
+    //public Long idcart;
 
    // public Long idproduct;
 }
