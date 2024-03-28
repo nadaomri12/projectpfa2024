@@ -18,7 +18,7 @@ jobs:
           login-server: sitepfa.azurecr.io
           username: ${{ secrets.ACR_USERNAME }}
           password: ${{ secrets.ACR_PASSWORD }}y
-       run: |
+        run: |
     
           docker build -t sitepfa.azurecr.io/frontend:${{ github.sha }} ./front
           docker push sitepfa.azurecr.io/frontend:${{ github.sha }}
@@ -38,7 +38,7 @@ jobs:
           username: ${{ secrets.ACR_USERNAME }}
           password: ${{ secrets.ACR_PASSWORD }}
       
-          run: |
+        run: |
             docker build -t sitepfa.azurecr.io/backend:${{ github.sha }} ./backend
       
      
