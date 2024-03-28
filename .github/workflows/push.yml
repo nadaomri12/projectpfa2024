@@ -19,7 +19,7 @@ jobs:
           username: ${{ secrets.ACR_USERNAME }}
           password: ${{ secrets.ACR_PASSWORD }}
       - name: Build frontend Docker image
-         run: docker build -t sitepfa.azurecr.io/frontend:${{ github.sha }} ./front
+        run: docker build -t sitepfa.azurecr.io/frontend:${{ github.sha }} ./front
         
       - name: Push frontend Docker image to Azure Container Registry
         run: docker push sitepfa.azurecr.io/frontend:${{ github.sha }}
