@@ -52,6 +52,7 @@ jobs:
         uses: appleboy/ssh-action@v1.0.3
         with:
           host: 20.19.36.97
+          username: eyapfa
           port: 22
           key: ${{ secrets.GHA_DEPLOY_SSH_PRIVATE_KEY }}
           script: whoami
