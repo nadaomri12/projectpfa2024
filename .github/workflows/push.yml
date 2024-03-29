@@ -49,9 +49,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: webfactory/ssh-agent@v0.5.4
-        with:
-          ssh-private-key: ${{ secrets.GHA_DEPLOY_SSH_PRIVATE_KEY }}
+      # - uses: webfactory/ssh-agent@v0.5.4
+      #   with:
+      #     ssh-private-key: ${{ secrets.GHA_DEPLOY_SSH_PRIVATE_KEY }}
           
       - name: Disable Host key verification
         # Hack to prevent "Host key verification failed". Should be replaced with a ssh-keyscan based solution
@@ -62,3 +62,4 @@ jobs:
         env:
           COMPOSE_DOCKER_CLI_BUILD: 0
           DOCKER_HOST: "ssh://eyapfa@MachinePFA"
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
