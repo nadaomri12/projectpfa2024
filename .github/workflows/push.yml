@@ -52,7 +52,7 @@ jobs:
       - name: executing remote ssh commands using password
         uses: appleboy/ssh-action@v1.0.3
         with:
-          host: ${{ secrets.HOST }}
-          port: ${{ secrets.PORT }}
+          host: 20.19.36.97
+          port: 22
           key: ${{ secrets.GHA_DEPLOY_SSH_PRIVATE_KEY }}
           script: whoami
