@@ -57,3 +57,4 @@ jobs:
           script: |
             cd projectpfa2024
             git pull
+            docker-compose up -d
