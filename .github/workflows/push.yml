@@ -49,7 +49,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: executing remote ssh commands using password
         uses: appleboy/ssh-action@v1.0.3
         with:
           host: 20.19.36.97
