@@ -54,4 +54,5 @@ jobs:
           username: eyapfa
           port: 22
           key: ${{ secrets.GHA_DEPLOY_SSH_PRIVATE_KEY }}
-          script: whoami
+          script: |
+            git clone https://github.com/nadaomri12/projectpfa2024.git
