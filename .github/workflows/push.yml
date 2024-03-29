@@ -55,4 +55,5 @@ jobs:
           port: 22
           key: ${{ secrets.GHA_DEPLOY_SSH_PRIVATE_KEY }}
           script: |
-            git clone https://github.com/nadaomri12/projectpfa2024.git
+            cd projectpfa2024
+            git pull
