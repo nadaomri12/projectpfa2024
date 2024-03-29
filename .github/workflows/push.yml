@@ -60,6 +60,5 @@ jobs:
       - name: Deploy
         run: docker-compose up -d
         env:
-          COMPOSE_DOCKER_CLI_BUILD: 1
-          DOCKER_HOST: ssh://20.19.36.97@MachinePFA
-          DOCKER_TLS_CERTDIR: ""
+          COMPOSE_DOCKER_CLI_BUILD: 0
+          DOCKER_HOST: machinepfaa
