@@ -49,18 +49,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: webfactory/ssh-agent@v0.9.0
+      - name: executing remote ssh commands using password
+        uses: appleboy/ssh-action@v1.0.3
         with:
-          ssh-private-key: ${{ secrets.GHA_DEPLOY_SSH_PRIVATE_KEY }}
-          
-      - name: Disable Host key verification
-        # Hack to prevent "Host key verification failed". Should be replaced with a ssh-keyscan based solution
-        run: echo "StrictHostKeyChecking no" >> ~/.ssh/config
-      - name: Clone Git repository
-        run: ssh eyapfa@20.19.36.97 "git clone https://github.com/nadaomri12/projectpfa2024.git"
-
-      - name: Deploy
-        run: docker-compose up -d
-        env:
-          COMPOSE_DOCKER_CLI_BUILD: 0
-          DOCKER_HOST: eyapfa@20.19.36.97
+          host: ${{ secrets.HOST }}
+          port: ${{ secrets.PORT }}
+          key: ${{ secrets.GHA_DEPLOY_SSH_PRIVATE_KEY }}
+          script: whoami
