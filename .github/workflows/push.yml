@@ -57,7 +57,7 @@ jobs:
         # Hack to prevent "Host key verification failed". Should be replaced with a ssh-keyscan based solution
         run: echo "StrictHostKeyChecking no" >> ~/.ssh/config
       - name: Clone Git repository
-      run: ssh eyapfa@20.19.36.97 "git clone https://github.com/nadaomri12/projectpfa2024.git"
+        run: ssh eyapfa@20.19.36.97 "git clone https://github.com/nadaomri12/projectpfa2024.git"
 
       - name: Deploy
         run: docker-compose up -d
