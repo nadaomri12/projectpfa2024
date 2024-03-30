@@ -17,7 +17,7 @@ services:
       - backendNetwork
 
   backend:
-    image: sitepfa.azurecr.io/backend 
+    image: sitepfa.azurecr.io/backend
     ports:  
       - "8080:8080"
     depends_on:
