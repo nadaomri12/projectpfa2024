@@ -1,14 +1,14 @@
 version: '3'
 services:
   frontend:
-    build:
-      context: ./front 
+    image: frontendpfa
     ports:
       - "4200:80" 
 
   mysql:
     image: mysql:latest
     container_name: database
+   
     environment:
       MYSQL_ROOT_PASSWORD: pfa2024nadaomri2024%
       MYSQL_DATABASE: base
@@ -18,56 +18,17 @@ services:
       - backendNetwork
 
   backend:
-    build:
-      context: ./backend  
+    image: backendpfa
     ports:
       - "8080:8080"
     depends_on:
       - mysql
+    
     command: ["java", "-jar", "/app/backendpfa.jar"]
     networks:
       - backendNetwork
       - frontendNetwork
-    environment:
-      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/base?sessionVariables=sql_mode='NO_ENGINE_SUBSTITUTION'&jdbcCompliantTruncation=false
-      SPRING_DATASOURCE_USERNAME: root
-      SPRING_DATASOURCE_PASSWORD: pfa2024nadaomri2024%
 
-networks:
-  backendNetwork:
-  frontendNetwork:
-
-volumes:
-  mysqll:version: '3'
-services:
-  frontend:
-    build:
-      context: ./front 
-    ports:
-      - "4200:80" 
-
-  mysql:
-    image: mysql:latest
-    container_name: database
-    environment:
-      MYSQL_ROOT_PASSWORD: pfa2024nadaomri2024%
-      MYSQL_DATABASE: base
-    volumes:
-      - mysqll:/var/lib/mysql
-    networks:
-      - backendNetwork
-
-  backend:
-    build:
-      context: ./backend  
-    ports:
-      - "8080:8080"
-    depends_on:
-      - mysql
-    command: ["java", "-jar", "/app/backendpfa.jar"]
-    networks:
-      - backendNetwork
-      - frontendNetwork
     environment:
       SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/base?sessionVariables=sql_mode='NO_ENGINE_SUBSTITUTION'&jdbcCompliantTruncation=false
       SPRING_DATASOURCE_USERNAME: root
