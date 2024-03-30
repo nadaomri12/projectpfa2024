@@ -22,7 +22,7 @@ services:
       - "8080:8080"
     depends_on:
       - mysql
-    command: ["sh", "-c", "wait-for-it.sh mysql:3306 -- java -jar /app/backendpfa.jar"]
+    command: ["java", "-jar", "/app/backendpfa.jar"]
     
     networks:
       - backendNetwork
