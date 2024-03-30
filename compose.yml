@@ -1,7 +1,7 @@
 version: '3'
 services:
   frontend:
-    image: sitepfa.azurecr.io/frontend
+    image: frontend
     ports:
       - "4200:80" 
 
@@ -18,7 +18,7 @@ services:
       - backendNetwork
 
   backend:
-    image: sitepfa.azurecr.io/backend
+    image: backend
     ports:
       - "8080:8080"
     depends_on:
