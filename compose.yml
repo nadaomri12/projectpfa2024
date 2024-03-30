@@ -1,43 +1,41 @@
 version: '3'
 services:
   frontend:
-    image: frontendpfa
+    image: nadaomri2001/frontendpfa 
     ports:
       - "4200:80" 
-    networks:
-      - frontendNetwork
 
   mysql:
-    image: mysql:latest
-    ports:
-      - "3306:3306"
+    image: nadaomri2001/mysql 
+   
     environment:
       MYSQL_ROOT_PASSWORD: pfa2024nadaomri2024%
       MYSQL_DATABASE: base
     volumes:
-      - mysqldata:/var/lib/mysql
+      - mysqll:/var/lib/mysql
     networks:
       - backendNetwork
 
   backend:
-    image: backendpfa
+    image: nadaomri2001/backendpfa 
     ports:
       - "8080:8080"
     depends_on:
       - mysql
-    #he4i jdida pushi trah
     command: ["sh", "-c", "wait-for-it.sh mysql:3306 -- java -jar /app/backendpfa.jar"]
+    
+    networks:
+      - backendNetwork
+      - frontendNetwork
+
     environment:
       SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/base?sessionVariables=sql_mode='NO_ENGINE_SUBSTITUTION'&jdbcCompliantTruncation=false
       SPRING_DATASOURCE_USERNAME: root
       SPRING_DATASOURCE_PASSWORD: pfa2024nadaomri2024%
-    networks:
-      - backendNetwork
-      - frontendNetwork
 
 networks:
   backendNetwork:
   frontendNetwork:
 
 volumes:
-  mysqldata:
+  mysqll:
