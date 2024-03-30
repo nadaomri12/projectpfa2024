@@ -61,4 +61,5 @@ jobs:
             docker login sitepfa.azurecr.io -u ${{ secrets.ACR_USERNAME }} -p ${{ secrets.ACR_PASSWORD }}
             docker pull sitepfa.azurecr.io/frontend:${{ github.sha }}
             docker pull sitepfa.azurecr.io/backend:${{ github.sha }}
-            docker-compose-
+            docker-compose -f compose.yml up
+
