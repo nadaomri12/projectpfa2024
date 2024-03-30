@@ -6,7 +6,7 @@ services:
       - "4200:80" 
 
   mysql:
-    image: mysql:latest 
+    image: mysql
    
     environment:
       MYSQL_ROOT_PASSWORD: pfa2024nadaomri2024%
