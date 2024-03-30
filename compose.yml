@@ -7,7 +7,6 @@ services:
 
   mysql:
     image: nadaomri2001/mysql 
-    container_name: database
    
     environment:
       MYSQL_ROOT_PASSWORD: pfa2024nadaomri2024%
