@@ -5,7 +5,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@CrossOrigin
+@CrossOrigin(origins = "http://20.19.36.97")
 @RequestMapping(path = "api/auth")
 public class AuthenticationController {
     @Autowired
