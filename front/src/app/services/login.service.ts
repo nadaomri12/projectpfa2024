@@ -13,7 +13,7 @@ export class LoginService {
 
   constructor(private http: HttpClient,private router: Router) { }
   login(userObject:any): Observable<any> { 
-    return this.http.post<any>('https://localhost:8080/api/auth/authenticate' ,userObject);
+    return this.http.post<any>('http://localhost:8080/api/auth/authenticate' ,userObject);
   }
   storeToken(tokenValue: string){
     localStorage.setItem('token', tokenValue)
