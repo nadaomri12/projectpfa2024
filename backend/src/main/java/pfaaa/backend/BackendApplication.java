@@ -15,17 +15,10 @@ import java.util.Optional;
 import static pfaaa.backend.entity.Role.ADMIN;
 
 @SpringBootApplication
-public class BackendApplication implements WebMvcConfigurer {
-	@Override
-	public void addCorsMappings(CorsRegistry registry) {
-		registry.addMapping("/**")
-				.allowedOrigins("*")
-				.allowedMethods("GET", "POST", "PUT", "DELETE")
-				.allowedHeaders("*")
-				.allowCredentials(true);
-	}
+public class BackendApplication   {
 
 	public static void main(String[] args) {
+
 		SpringApplication.run(BackendApplication.class, args);
 	}
 
