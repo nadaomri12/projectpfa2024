@@ -16,7 +16,7 @@ export class SerrviceService {
   }
 
   deleteproduct(id:any){
-    return this.http.delete(  `api/produit`
+    return this.http.delete(  `api/produit/`
     +id)
   }
 
