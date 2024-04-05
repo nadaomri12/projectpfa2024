@@ -5,7 +5,7 @@ services:
     ports:
       - "80:80" 
     environment:
-      - VIRTUAL_MACHINE_IP= ${{ votre_adresse_ip }}  
+      - VIRTUAL_MACHINE_IP= 20.19.36.97  
 
 
   mysql:
