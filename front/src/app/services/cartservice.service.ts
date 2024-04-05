@@ -99,44 +99,44 @@ export class CartserviceService {
  ///minhna yabda code s7i7 bl api backend
  
   AddtooCart(item:any): Observable<any> { 
-    return this.http.post<any>(`${this.url}/additem` ,item);
+    return this.http.post<any>(`api/additem` ,item);
   }
 
   getCartbyid(id:any)
   {
-    return this.http.get(`${this.url}/cart/`+id)
+    return this.http.get(`api/cart/`+id)
   }
  removeitemfromcart(idclient:any,idproduct:any){
-  return this.http.delete(`${this.url}/removeitem/`+idclient+'/'+idproduct)
+  return this.http.delete(`api/removeitem/`+idclient+'/'+idproduct)
  }
 
  removeAllItem(idclient:any){
-  return this.http.delete( `${this.url}/removeallitem/`
+  return this.http.delete( `api/removeallitem/`
   +idclient)
  }
 
  addcommande(commande:any){
-  return this.http.post( `${this.url}/addcommande`
+  return this.http.post( `api/addcommande`
   ,commande)
  }
  getcommandes(){
-  return this.http.get( `${this.url}/commandes`)
+  return this.http.get( `api/commandes`)
  }
  getcommandebyid(idcom:any){
-  return this.http.get( `${this.url}/commande`
+  return this.http.get( `api/commande`
   +idcom)
  } 
 
  getfacturebyid(id:any){
-  return this.http.get(`${this.url}/commande/`+id)
+  return this.http.get(`api/commande/`+id)
  }
 
  getcommandeclient(id:any){
-  return this.http.get(`${this.url}/commande/client/`+id)
+  return this.http.get(`api/commande/client/`+id)
  }
 
  updateCommande(data:any){
-   return this.http.put(`${this.url}/update`,data)
+   return this.http.put(`api/update`,data)
  }
 
 }

@@ -16,48 +16,48 @@ export class SerrviceService {
   }
 
   deleteproduct(id:any){
-    return this.http.delete(  `${this.url}/produit`
+    return this.http.delete(  `api/produit`
     +id)
   }
 
 
   updateproduct(updatedProduct: any): Observable<any> {
-    return this.http.put(  `${this.url}/update/produit`
+    return this.http.put(  `api/update/produit`
     , updatedProduct);
   }
 
   
   getproducts(){
-   return this.http.get(    `${this.url}/produits`
+   return this.http.get(    `api/produits`
    )
     
    }
    getcategory(){
-    return this.http.get(   `${this.url}/catalogues`
+    return this.http.get(   `api/catalogues`
     )
 
     
    }
 
    searchproduct(name:any){
-    return this.http.get(   `${this.url}/searchproduct/`
+    return this.http.get(   `api/searchproduct/`
     +name)
    }
 
 
     getproduitbyid(id:any)
     {
-      return this.http.get(    `${this.url}/produit/`
+      return this.http.get(    `api/produit/`
       +id)
     }
 
     getProductsByCategorie(nomcategorie: string) {
       const params = { categorieNom: nomcategorie };
-      return this.http.get(    `${this.url}/produits/categorie`
+      return this.http.get(    `api/produits/categorie`
       , { params });
     }
     getProduct(){
-      return this.http.get<any>("    ${this.url}/produits")
+      return this.http.get<any>("    api/produits")
       .pipe(map((res:any)=>{
         return res;
       }))
@@ -66,7 +66,7 @@ export class SerrviceService {
 
     addproduct(product: any): Observable<any> {
   
-      return this.http.post(`${this.url}/addproduit`, product);
+      return this.http.post(`api/addproduit`, product);
     }
 
 
@@ -76,15 +76,15 @@ export class SerrviceService {
     }
     updateCategory(categoryData: any): Observable<any> {
       
-      return this.http.put(`${this.url}/catalogue`, categoryData);
+      return this.http.put(`api/catalogue`, categoryData);
     }
 
     deletcategory(id:any){
-      return this.http.delete(`${this.url}/catalogue`+id)
+      return this.http.delete(`api/catalogue`+id)
     }
     getcategorybyid(id:any)
     {
-      return this.http.get(`${this.url}/catalogue`+id)
+      return this.http.get(`api/catalogue`+id)
     }
     postReview(Review: any) {
      
@@ -93,22 +93,22 @@ export class SerrviceService {
         author: Review.author,
         authoremail: Review.authoremail
       };
-      return this.http.post(`${this.url}/Review/post`, reviewObject);
+      return this.http.post(`api/Review/post`, reviewObject);
     }
     getReview(){
-      return this.http.get(`${this.url}/Review/allreview`
+      return this.http.get(`api/Review/allreview`
       )
     }
 
     getAllcontact():Observable<any>{
-      return this.http.get<[]>(  `${this.url}/contacts`
+      return this.http.get<[]>(  `api/contacts`
       )
     }
 
 
     addcontact(contact: any): Observable<any> {
   
-      return this.http.post(`${this.url}/contacts`, contact);
+      return this.http.post(`api/contacts`, contact);
     }
     
 

@@ -9,13 +9,12 @@ import { environment } from '../../environments/environment';
 })
 export class LoginService {
 
-  url=environment.apiURL
 
   isLoggedIn: boolean = false;
 
   constructor(private http: HttpClient,private router: Router) { }
   login(userObject:any): Observable<any> { 
-    return this.http.post<any>(  `${this.url}/auth/authenticate`
+    return this.http.post<any>(  `api/auth/authenticate`
     ,userObject);
   }
   storeToken(tokenValue: string){
@@ -25,7 +24,7 @@ export class LoginService {
     return localStorage.getItem('token')
   }
   signUp(userObject:any): Observable<any> { // La fonction renvoie un tableau d'employés, donc il faut utiliser Observable<Employee[]>
-    return this.http.post<any>(  `${this.url}/auth/register`
+    return this.http.post<any>(  `api/auth/register`
     ,userObject);
   }
 
@@ -38,25 +37,25 @@ export class LoginService {
    
  //get all Client
  getAllClient():Observable<any>{
-  return this.http.get<[]>(  `${this.url}/clients`
+  return this.http.get<[]>(  `api/clients`
   )
 }
 
 deleteclient(id:any){
-  return this.http.delete(`${this.url}/deleteclient`+id)
+  return this.http.delete(`api/deleteclient`+id)
 }
 
 getClient(id:any):Observable<any>{
-  return this.http.get(`${this.url}/client`
+  return this.http.get(`api/client`
   +id)
 }
 getSubscribedUsers(): Observable<any[]> {
-  return this.http.get<any[]>(`${this.url}/subscribed`
+  return this.http.get<any[]>(`api/subscribed`
   );
 }
 
 deleteEmailSubscription(id: number): Observable<void> {
-  return this.http.delete<void>(`${this.url}/email/${id}`);
+  return this.http.delete<void>(`api/email/${id}`);
 }
 
 }

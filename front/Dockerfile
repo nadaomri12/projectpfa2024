@@ -22,6 +22,7 @@ FROM nginx:alpine
 
 # Copy the production-ready Angular app to the Nginx webserver's root directory
 COPY --from=build /app/dist/front-end-pfa/browser  /usr/share/nginx/html
+COPY nginx.conf /etc/nginx/conf.d/default.conf
 
 # Expose port 80
 EXPOSE 80
