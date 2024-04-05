@@ -80,11 +80,11 @@ export class SerrviceService {
     }
 
     deletcategory(id:any){
-      return this.http.delete(`api/catalogue`+id)
+      return this.http.delete(`api/catalogue/`+id)
     }
     getcategorybyid(id:any)
     {
-      return this.http.get(`api/catalogue`+id)
+      return this.http.get(`api/catalogue/`+id)
     }
     postReview(Review: any) {
      
