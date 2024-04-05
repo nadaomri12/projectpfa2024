@@ -24,8 +24,7 @@ export class LoginService {
     return localStorage.getItem('token')
   }
   signUp(userObject:any): Observable<any> { // La fonction renvoie un tableau d'employés, donc il faut utiliser Observable<Employee[]>
-    return this.http.post<any>(  `api/auth/register`
-    ,userObject);
+    return this.http.post<any>(  `api/auth/register`,userObject);
   }
 
  
@@ -42,12 +41,11 @@ export class LoginService {
 }
 
 deleteclient(id:any){
-  return this.http.delete(`api/deleteclient`+id)
+  return this.http.delete(`api/deleteclient/`+id)
 }
 
 getClient(id:any):Observable<any>{
-  return this.http.get(`api/client`
-  +id)
+  return this.http.get(`api/client/`+id)
 }
 getSubscribedUsers(): Observable<any[]> {
   return this.http.get<any[]>(`api/subscribed`

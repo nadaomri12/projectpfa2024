@@ -72,7 +72,7 @@ export class SerrviceService {
 
     addcategory(category: any): Observable<any> {
   
-      return this.http.post(`${this.url}/catalogue`, category);
+      return this.http.post(`api/catalogue`, category);
     }
     updateCategory(categoryData: any): Observable<any> {
       
