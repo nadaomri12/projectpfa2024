@@ -1,51 +1,63 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+
 import {map} from 'rxjs/operators';
 import { Observable } from 'rxjs';
 import { HttpHeaders } from '@angular/common/http';
+import { environment } from '../../environments/environment';
 @Injectable({
   providedIn: 'root'
 })
+
 export class SerrviceService {
 
-  
+  url=environment.apiURL
   constructor(private http:HttpClient) { 
-
   }
 
   deleteproduct(id:any){
-    return this.http.delete("http://localhost:8080/api/produit/"+id)
+    return this.http.delete(  `${this.url}/produit`
+    +id)
   }
 
+
   updateproduct(updatedProduct: any): Observable<any> {
-    return this.http.put('http://localhost:8080/api/update/produit', updatedProduct);
+    return this.http.put(  `${this.url}/update/produit`
+    , updatedProduct);
   }
+
   
   getproducts(){
-   return this.http.get("http://localhost:8080/api/produits")
+   return this.http.get(    `${this.url}/produits`
+   )
     
    }
    getcategory(){
-    return this.http.get("http://localhost:8080/api/catalogues")
-    
+    return this.http.get(   `${this.url}/catalogues`
+    )
+
     
    }
+
    searchproduct(name:any){
-    return this.http.get('http://localhost:8080/api/searchproduct/'+name)
+    return this.http.get(   `${this.url}/searchproduct/`
+    +name)
    }
+
 
     getproduitbyid(id:any)
     {
-      return this.http.get('http://localhost:8080/api/produit/'+id)
+      return this.http.get(    `${this.url}/produit/`
+      +id)
     }
 
     getProductsByCategorie(nomcategorie: string) {
       const params = { categorieNom: nomcategorie };
-      return this.http.get('http://localhost:8080/api/produits/categorie', { params });
+      return this.http.get(    `${this.url}/produits/categorie`
+      , { params });
     }
-
     getProduct(){
-      return this.http.get<any>("http://localhost:8080/api/produits")
+      return this.http.get<any>("    ${this.url}/produits")
       .pipe(map((res:any)=>{
         return res;
       }))
@@ -54,25 +66,25 @@ export class SerrviceService {
 
     addproduct(product: any): Observable<any> {
   
-      return this.http.post(`http://localhost:8080/api/addproduit`, product);
+      return this.http.post(`${this.url}/addproduit`, product);
     }
 
 
     addcategory(category: any): Observable<any> {
   
-      return this.http.post(`http://localhost:8080/api/catalogue`, category);
+      return this.http.post(`${this.url}/catalogue`, category);
     }
     updateCategory(categoryData: any): Observable<any> {
       
-      return this.http.put('http://localhost:8080/api/catalogue', categoryData);
+      return this.http.put(`${this.url}/catalogue`, categoryData);
     }
 
     deletcategory(id:any){
-      return this.http.delete("http://localhost:8080/api/catalogue/"+id)
+      return this.http.delete(`${this.url}/catalogue`+id)
     }
     getcategorybyid(id:any)
     {
-      return this.http.get('http://localhost:8080/api/catalogue/'+id)
+      return this.http.get(`${this.url}/catalogue`+id)
     }
     postReview(Review: any) {
      
@@ -81,19 +93,22 @@ export class SerrviceService {
         author: Review.author,
         authoremail: Review.authoremail
       };
-      return this.http.post("http://localhost:8080/api/Review/post", reviewObject);
+      return this.http.post(`${this.url}/Review/post`, reviewObject);
     }
     getReview(){
-      return this.http.get("http://localhost:8080/api/Review/allreview")
+      return this.http.get(`${this.url}/Review/allreview`
+      )
     }
+
     getAllcontact():Observable<any>{
-      return this.http.get<[]>('http://localhost:8080/api/contacts')
+      return this.http.get<[]>(  `${this.url}/contacts`
+      )
     }
 
 
     addcontact(contact: any): Observable<any> {
   
-      return this.http.post("http://localhost:8080/api/contacts", contact);
+      return this.http.post(`${this.url}/contacts`, contact);
     }
     
 

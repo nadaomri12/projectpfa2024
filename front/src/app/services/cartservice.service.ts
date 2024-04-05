@@ -1,6 +1,7 @@
 import { Injectable, model } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
+import { environment } from '../../environments/environment';
 @Injectable({
   providedIn: 'root'
 })
@@ -9,7 +10,8 @@ export class CartserviceService {
   private cartItemList: BehaviorSubject<any[]> = new BehaviorSubject<any[]>([]);
   public cartItemList$: Observable<any[]> = this.cartItemList.asObservable();
    quantity:any;
- 
+   url=environment.apiURL
+
   constructor(private http:HttpClient) {
     // Récupérer les données du panier depuis le stockage local au démarrage de l'application
     const storedCartItems = JSON.parse(localStorage.getItem('cartItems') || '[]');
@@ -97,40 +99,44 @@ export class CartserviceService {
  ///minhna yabda code s7i7 bl api backend
  
   AddtooCart(item:any): Observable<any> { 
-    return this.http.post<any>('http://localhost:8080/api/additem' ,item);
+    return this.http.post<any>(`${this.url}/additem` ,item);
   }
- 
 
   getCartbyid(id:any)
   {
-    return this.http.get('http://localhost:8080/api/cart/'+id)
+    return this.http.get(`${this.url}/cart/`+id)
   }
  removeitemfromcart(idclient:any,idproduct:any){
-  return this.http.delete('http://localhost:8080/api/removeitem/'+idclient+'/'+idproduct)
- }
- removeAllItem(idclient:any){
-  return this.http.delete('http://localhost:8080/api/removeallitem/'+idclient)
- }
- addcommande(commande:any){
-  return this.http.post('http://localhost:8080/api/addcommande',commande)
- }
- getcommandes(){
-  return this.http.get('http://localhost:8080/api/commandes')
+  return this.http.delete(`${this.url}/removeitem/`+idclient+'/'+idproduct)
  }
 
- getcommandebyid(idcom:any){
-  return this.http.get('http://localhost:8080/api/commande/'+idcom)
+ removeAllItem(idclient:any){
+  return this.http.delete( `${this.url}/removeallitem/`
+  +idclient)
  }
+
+ addcommande(commande:any){
+  return this.http.post( `${this.url}/addcommande`
+  ,commande)
+ }
+ getcommandes(){
+  return this.http.get( `${this.url}/commandes`)
+ }
+ getcommandebyid(idcom:any){
+  return this.http.get( `${this.url}/commande`
+  +idcom)
+ } 
+
  getfacturebyid(id:any){
-  return this.http.get('http://localhost:8080/api/commande/'+id)
+  return this.http.get(`${this.url}/commande/`+id)
  }
 
  getcommandeclient(id:any){
-  return this.http.get('http://localhost:8080/api/commande/client/'+id)
+  return this.http.get(`${this.url}/commande/client/`+id)
  }
 
  updateCommande(data:any){
-   return this.http.put('http://localhost:8080/api/update',data)
+   return this.http.put(`${this.url}/update`,data)
  }
 
 }

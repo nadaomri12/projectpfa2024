@@ -4,6 +4,9 @@ services:
     image: sitepfa.azurecr.io/frontend 
     ports:
       - "80:80" 
+    environment:
+      - VIRTUAL_MACHINE_IP= ${{ votre_adresse_ip }}  
+
 
   mysql:
     image: mysql
