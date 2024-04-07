@@ -58,7 +58,4 @@ jobs:
           script: |
             cd projectpfa2024
             git clone https://github.com/nadaomri12/projectpfa2024.git
-            docker compose down
-            docker compose pull
-            docker compose up --force-recreate --build -d
-            docker image prune -f
+            
