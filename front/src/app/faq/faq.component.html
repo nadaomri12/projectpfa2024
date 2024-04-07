@@ -1,0 +1,23 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+<!-- google font -->
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+
+<body>
+    <app-navbar></app-navbar>
+
+    <div class="questions-container">
+        <div *ngFor="let qa of questionsAndAnswers">
+
+            <div class="question">
+                <button (click)="toggleQuestion($event)">
+                    {{ qa.question }}
+                <i class="fas fa-chevron-down d-arrow"></i>
+                </button>
+                <p>{{ qa.answer }}</p>
+            </div>
+        </div>
+    </div>
+
+        
+</body>
+<app-footer></app-footer>

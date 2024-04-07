@@ -45,6 +45,7 @@ import { LayoutModule } from './layout/layout.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { OrdersComponent } from './orders/orders.component';
 import { ArticleFiltrerPipePipe } from './article-filtrer-pipe.pipe';
+import { AllquestionComponent } from './allquestion/allquestion.component';
 
 
 @NgModule({
@@ -80,6 +81,7 @@ import { ArticleFiltrerPipePipe } from './article-filtrer-pipe.pipe';
     DashboardComponent,
     OrdersComponent,
     ArticleFiltrerPipePipe,
+    AllquestionComponent,
     
   ],
   imports: [

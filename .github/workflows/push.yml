@@ -15,14 +15,14 @@ jobs:
       - name: Build and push frontend Docker image
         uses: azure/docker-login@v1
         with:
-          login-server: sitepfa.azurecr.io
+          login-server: pfaproject.azurecr.io
           username: ${{ secrets.ACR_USERNAME }}
           password: ${{ secrets.ACR_PASSWORD }}
       - name: Build frontend Docker image
-        run: docker build -t sitepfa.azurecr.io/frontend ./front
+        run: docker build -t pfaproject.azurecr.io/frontend ./front
         
       - name: Push frontend Docker image to Azure Container Registry
-        run: docker push sitepfa.azurecr.io/frontend
+        run: docker push pfaproject.azurecr.io/frontend
 
       
   
@@ -35,15 +35,15 @@ jobs:
       - name: Build and push backend Docker image
         uses: azure/docker-login@v1
         with:
-          login-server: sitepfa.azurecr.io
+          login-server: pfaproject.azurecr.io
           username: ${{ secrets.ACR_USERNAME }}
           password: ${{ secrets.ACR_PASSWORD }}
       
       - name: Build backend Docker image
-        run: docker build -t sitepfa.azurecr.io/backend ./backend
+        run: docker build -t pfaproject.azurecr.io/backend ./backend
       
       - name: Push backend Docker image to Azure Container Registry
-        run: docker push sitepfa.azurecr.io/backend
+        run: docker push pfaproject.azurecr.io/backend
 
   deploy:
     runs-on: ubuntu-latest
@@ -51,8 +51,8 @@ jobs:
     steps:
       - uses: appleboy/ssh-action@v1.0.3
         with:
-          host: 20.19.36.97
-          username: eyapfa
+          host: 20.19.88.147
+          username: nada
           port: 22
           key: ${{ secrets.GHA_DEPLOY_SSH_PRIVATE_KEY }}
           script: |
