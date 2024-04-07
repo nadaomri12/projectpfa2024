@@ -57,5 +57,8 @@ jobs:
           key: ${{ secrets.GHA_DEPLOY_SSH_PRIVATE_KEY }}
           script: |
             cd projectpfa2024
-            git clone https://github.com/nadaomri12/projectpfa2024.git
-            
+            git pull
+            docker compose down
+            docker compose pull
+            docker compose up --force-recreate --build -d
+            docker image prune -f
