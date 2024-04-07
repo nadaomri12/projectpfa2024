@@ -57,7 +57,7 @@ jobs:
           key: ${{ secrets.GHA_DEPLOY_SSH_PRIVATE_KEY }}
           script: |
             cd projectpfa2024
-            git pull
+            git pull pfaproject.azurecr.io/frontend
             docker compose down
             docker compose pull
             docker compose up --force-recreate --build -d
