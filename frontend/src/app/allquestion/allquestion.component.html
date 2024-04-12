@@ -6,25 +6,8 @@
     
                 <li><a href="#" style="color:black;margin-left: 40px; line-height: 30px ; size:20px;" routerLink="/addQuestion">Poser un question</a></li>
                 <li><a href="#" style="color:black;margin-left: 40px;" routerLink="/allQuestions"> lire les Questions</a></li>
-                
-                <li><a href="#"style="color:#FF6F61;font-size: 17px;">Discussions</a></li>
-                
-    
-                
-    
-                
-                
-                <li><a href="#" style="color: #FF6F61; font-size: 17px;">Tags</a></li>
                 <li *ngFor="let categorie of categories"><button type="button"class="tagsBouton" (click)="fetchQuestionsByCategoryId(categorie.id)">{{ categorie.nomCatalogue}}</button></li>
 
-                   
-    
-    
-    
-    
-                  
-    
-    
             </ul>
         </div>
         <div class="main-content">

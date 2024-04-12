@@ -25,6 +25,7 @@ import { AuthAdminlayoutComponent } from './auth-adminlayout/auth-adminlayout.co
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { OrdersComponent } from './orders/orders.component';
 import { AllquestionComponent } from './allquestion/allquestion.component';
+import { AddQuestionComponent } from './add-question/add-question.component';
 const routes: Routes = [
 
  {path:'product',component: ProductComponent},
@@ -38,6 +39,7 @@ const routes: Routes = [
  {path:'review',component:TestimonialComponent},
  {path:'authadmin',component:AuthAdminlayoutComponent},
  {path:'allQuestions',component:AllquestionComponent},
+ {path:'addQuestion',component:AddQuestionComponent},
 
 {
   path: 'admin',

@@ -3,6 +3,7 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { environment } from '../../environments/environment';
+import { Categorie } from '../categorie';
 
 @Injectable({
   providedIn: 'root'
@@ -81,8 +82,12 @@ getQuestionsByCatalogueId(catalogueId: number): Observable<any[]> {
 createQuestion(QuestionDto:any):Observable<any>{
   return this.http.post('api/questions',QuestionDto)}
 
-
-
+  getUserById(id: any): Observable<any> {
+    return this.http.get<any>(`api/users/${id}`);
+  }
+  getAllCategorie():Observable<any>{
+    return this.http.get<Categorie[]>('api/catalogues')
+  }
 
 
 }

@@ -4,6 +4,7 @@ import org.springframework.stereotype.Service;
 import pfaaa.backend.Repository.ClientRepository;
 import pfaaa.backend.entity.Client;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class ClientService {
@@ -20,6 +21,8 @@ public class ClientService {
 
         return clientRepository.findById(id).get();
     }
+
+
     public List<Client> getClients() {
 
         return clientRepository.findAll();

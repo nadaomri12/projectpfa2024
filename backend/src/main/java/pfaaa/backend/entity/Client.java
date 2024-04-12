@@ -20,22 +20,19 @@ import java.util.Set;
 public class Client extends User  {
 
     private String address;
-    private Long CIN;// tabda muniscule ...
+    private Long CIN;
     private Long NumTel;
     private String Compte;
-
     private String emailSubscription;
-
-   @OneToMany(cascade = CascadeType.ALL, mappedBy="client")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy="client")
     private Set<Commande> commandes;
     @JsonBackReference
-@OneToOne(mappedBy = "client")
-private Cart cart;
+    @OneToOne(mappedBy = "client")
+    private Cart cart;
 
     public Cart getCart() {
         return cart;
     }
-
     public void setCart(Cart cart) {
         this.cart = cart;
     }
@@ -43,7 +40,6 @@ private Cart cart;
     public String getEmailSubscription() {
         return emailSubscription;
     }
-
     public void setEmailSubscription(String emailSubscription) {
         this.emailSubscription = emailSubscription;
     }
@@ -51,12 +47,9 @@ private Cart cart;
     public Long  getCIN() {
         return CIN;
     }
-
     public  void setCIN(Long CIN) {
         this.CIN = CIN;
     }
-
-
 
     public Long getNumTel() {
         return NumTel;
@@ -68,7 +61,6 @@ private Cart cart;
     public String getAddress() {
         return address;
     }
-
     public void setAddress(String address) {
         this.address = address;
     }
@@ -76,7 +68,6 @@ private Cart cart;
     public String getCompte() {
         return Compte;
     }
-
     public  void setCompte(String compte) {
         Compte = compte;
     }

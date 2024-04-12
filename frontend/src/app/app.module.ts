@@ -46,6 +46,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { OrdersComponent } from './orders/orders.component';
 import { ArticleFiltrerPipePipe } from './article-filtrer-pipe.pipe';
 import { AllquestionComponent } from './allquestion/allquestion.component';
+import { AddQuestionComponent } from './add-question/add-question.component';
 
 
 @NgModule({
@@ -82,6 +83,7 @@ import { AllquestionComponent } from './allquestion/allquestion.component';
     OrdersComponent,
     ArticleFiltrerPipePipe,
     AllquestionComponent,
+    AddQuestionComponent,
     
   ],
   imports: [

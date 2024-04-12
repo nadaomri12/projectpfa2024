@@ -10,8 +10,8 @@ import pfaaa.backend.entity.Catalogue;
 import pfaaa.backend.entity.Question;
 import pfaaa.backend.entity.User;
 import pfaaa.backend.service.CatalogueService;
+import pfaaa.backend.service.ClientService;
 import pfaaa.backend.service.QuestionService;
-import pfaaa.backend.service.Userservice;
 
 import java.util.List;
 import java.util.Optional;
@@ -27,9 +27,9 @@ public class QuestionController {
     private final CatalogueService catalogueService;
     private final QuestionRepository questionRepository;
     private final UserRepository userRepository;
-    private final Userservice service;
+    private final ClientService service;
 
-    public QuestionController(QuestionService questionService, CatalogueService catalogueService, QuestionRepository questionRepository, UserRepository userRepository, Userservice service) {
+    public QuestionController(QuestionService questionService, CatalogueService catalogueService, QuestionRepository questionRepository, UserRepository userRepository, ClientService service) {
         this.questionService = questionService;
         this.catalogueService = catalogueService;
         this.questionRepository = questionRepository;
@@ -41,7 +41,7 @@ public class QuestionController {
     @PostMapping("/questions")
     public Questiondto AddQuestion(@RequestBody Questiondto questionDto) {
         Question ques = new Question();
-        User user = this.service.getUser(questionDto.idUser);
+        User user = this.service.getClient(questionDto.idUser);
         Catalogue categorie = catalogueService.getCatalogueById(questionDto.idCatalogue)
                 .orElseThrow(() -> new IllegalArgumentException("Catégorie non trouvée"));
         ques.setCategorie(categorie);

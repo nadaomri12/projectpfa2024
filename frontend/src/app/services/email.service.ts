@@ -7,7 +7,6 @@ import { environment } from '../../environments/environment';
   providedIn: 'root'
 })
 export class EmailService {
-  url=environment.apiURL
 
   constructor(private http: HttpClient) { }
 

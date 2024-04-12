@@ -10,7 +10,6 @@ export class CartserviceService {
   private cartItemList: BehaviorSubject<any[]> = new BehaviorSubject<any[]>([]);
   public cartItemList$: Observable<any[]> = this.cartItemList.asObservable();
    quantity:any;
-   url=environment.apiURL
 
   constructor(private http:HttpClient) {
     // Récupérer les données du panier depuis le stockage local au démarrage de l'application
