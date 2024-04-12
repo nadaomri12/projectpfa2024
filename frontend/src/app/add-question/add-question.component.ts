@@ -58,7 +58,7 @@ ngOnInit(): void {
     this.idUser = parseInt(clientIdString, 10);
     this.userConnect.id=parseInt(clientIdString, 10);
   }this.getAllCategories()
-  this.getUserById();
+  this.getUserByid();
 
 }
 
@@ -68,7 +68,7 @@ ngOnInit(): void {
 
 
 
-getUserById(): void {
+getUserByid(): void {
   this.auth.getUserById(this.userConnect.id).subscribe(
     (user: User) => {
       if (user) {
@@ -94,10 +94,9 @@ getAllCategories(): void {
 onSubmit(): void {
   console.log("our selected category id", this.selectedCategoryId);
   if (this.selectedCategoryId !== null && this.selectedCategoryId !== 0) {
-    this.questionDto.idCatalogue = this.selectedCategoryId;
-    this.questionDto.idUser = this.idUser; // Also make sure to assign idUser
-    if (this.questionDto.file) {
-      console.log("our image 2 is", this.questionDto.file);
+      this.questionDto.idCatalogue = this.selectedCategoryId;
+      this.questionDto.idUser = this.idUser; 
+   
       this.auth.createQuestion(this.questionDto).subscribe(
         response => {
           console.log('question created successfully:', response);
@@ -122,4 +121,3 @@ onSubmit(): void {
 
 
 
-}
