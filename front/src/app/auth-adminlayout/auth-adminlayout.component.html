@@ -1,0 +1,67 @@
+<header>
+    <div class="navbar navbar-dark shadow-sm" style=" background-color: #FF6F61;">
+        <div class="navbar-brand align-item-center d-flex">
+            <i style="font-size: 40px;" class="fas fa-shipping-fast">&nbsp;
+                
+            </i>
+            <strong style="font-size: 30px;">E-SHOP</strong>
+        </div>
+       
+    </div>
+</header>
+   
+    <div class="boutonAlign">
+                <button type="button" class="move">Sign in </button>
+                
+    </div>
+    <div class="container">
+        <div class="left-content">
+            <h1>Welcome Admin!!  </h1>
+        
+            <h5>
+                <!-- Utilise une icône de flèche à droite, de petite taille, de couleur violette -->
+                <i class="fas fa-arrow-right fa-xs" style="color: #FF6F61;"></i>
+                <!-- Crée un lien vers la page d'accueil de l'application -->
+                <a routerLink="/" style="color: #FF6F61;">View Home page</a>
+            </h5>
+            <img src="./assets/Image/login.png" style="height: 180px;width: 400px
+            ; margin-left: 20px;margin-top: 10px;margin-bottom: 30px;">
+        </div>
+        <div class="right-content">
+            <!-- Formulaire de connexion -->
+            <div class="signin-form">
+                <form  [formGroup]="loginForm">
+                    <div class="form-group">
+                        <h5>Sign In</h5>
+                        <BR>
+                        <input type="email" formControlName="email" class="form-control" placeholder="Enter Email " id="email" aria-describedby="emailHelp">
+                    </div>
+                    <div class="form-group">
+                        <input type="{{ type }}" formControlName="password" class="form-control" placeholder="Password "id="password"> <button (click)="hideShowPass()" type="button" class="show-password-button"> <span class="fa {{eyeIcon}}"></span> </button>          
+                    </div>
+                    <button type="submit" (click)="onLogin()" class="colorBackgroundMove">Sign in</button>
+
+                </form>
+
+            </div>
+            <div class="connect">
+                <div class="tex">
+                    <span> <hr>  Or connect with <hr></span>
+                </div>
+                <div class="conv">
+                    <a href="https://www.facebook.com" target="_blank" class="dr">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="https://www.google.com" target="_blank" class="dr">
+                        <i class="fab fa-google"></i>
+                    </a>
+                    <a href="https://www.github.com" target="_blank" class="dr">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <app-footer></app-footer>
+
+

@@ -1,0 +1,66 @@
+<app-navbar></app-navbar>
+
+<header>
+    <div class="navbar navbar-dark shadow-sm">
+        <div class="flex">
+            <label for="categorySelect" class="mr-2">Catégories</label>
+            <select id="categorySelect" class="form-control2" (change)="filtercategory($event)">
+                <option value="All" selected>All</option>
+                <option  value="{{category.nomCatalogue}}"*ngFor="let category of categories" >{{category.nomCatalogue}}</option>
+            </select>
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="search products" [(ngModel)]="filterText" >
+
+            </div>
+            <button class="fas fa-search search-icon" style="background-color: white;"(click)="searchproduct2(searchInput)"></button>
+
+
+        </div>
+        
+    </div>
+</header>
+
+
+<br>
+
+<div class="product-view">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="row">
+                    <div class="col-md-3" *ngFor="let product of (products | articleFiltrerPipe: filterText) | paginate: { itemsPerPage: (pages === 1) ? 8: 8, currentPage: pages, id: paginationId }">
+                        <!-- Affichez vos produits ici -->
+                        <div class="product-item">
+                            <div class="product-title">
+                                <a routerLink="/detailproduit/{{product.id}}">{{product.nomProduit}}</a>
+                                <div class="ratting">
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                </div>
+                            </div>
+                            <div class="product-image">
+                                <a routerLink="/detailproduit/{{product.id}}">
+                                    <img src="{{product.image}}" alt="Product Image">
+                                </a>
+                                <div class="product-action">
+                                    <a routerLink="/detailproduit/{{product.id}}"><i class="fa fa-cart-plus"></i></a>
+                                   
+                                    <a  routerLink="/detailproduit/{{product.id}}"><i class="fa fa-search"></i></a>
+                                </div>
+                            </div>
+                            <div class="product-price">
+                                <h3><span>$</span>{{product.prix}}</h3>
+                                <a class="btn" routerLink="/detailproduit/{{product.id}}" ><i class="fa fa-shopping-cart"  ></i>Buy Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <pagination-controls (pageChange)="pages = $event" [id]="paginationId"></pagination-controls>
+</div>
+<app-footer></app-footer>
