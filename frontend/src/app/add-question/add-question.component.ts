@@ -69,7 +69,7 @@ ngOnInit(): void {
 
 
 getUserByid(): void {
-  this.auth.getUserById(this.userConnect.id).subscribe(
+  this.auth.getClient(this.userConnect.id).subscribe(
     (user: User) => {
       if (user) {
         this.userConnect = user;
