@@ -82,9 +82,7 @@ getQuestionsByCatalogueId(catalogueId: number): Observable<any[]> {
 createQuestion(QuestionDto:any):Observable<any>{
   return this.http.post('api/questions',QuestionDto)}
 
-  getUserById(id: any): Observable<any> {
-    return this.http.get<any>(`api/users/${id}`);
-  }
+
   getAllCategorie():Observable<any>{
     return this.http.get<Categorie[]>('api/catalogues')
   }
