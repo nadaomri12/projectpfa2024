@@ -24,8 +24,7 @@ import { ContactadminComponent } from './contactadmin/contactadmin.component';
 import { AuthAdminlayoutComponent } from './auth-adminlayout/auth-adminlayout.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { OrdersComponent } from './orders/orders.component';
-import { AllquestionComponent } from './allquestion/allquestion.component';
-import { AddQuestionComponent } from './add-question/add-question.component';
+import { FaqComponent } from './faq/faq.component';
 const routes: Routes = [
 
  {path:'product',component: ProductComponent},
@@ -37,9 +36,9 @@ const routes: Routes = [
  {path:'register',component:SignUpComponent},
  {path:'contact',component:ContactComponent},
  {path:'review',component:TestimonialComponent},
+ {path:'faq',component:FaqComponent},
+
  {path:'authadmin',component:AuthAdminlayoutComponent},
- {path:'allQuestions',component:AllquestionComponent},
- {path:'addQuestion',component:AddQuestionComponent},
 
 {
   path: 'admin',

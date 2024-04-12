@@ -70,17 +70,7 @@ removeFaq(id:number):Observable<any>{
 }
 
 
-getAllQuestions():Observable<any>{
-  return this.http.get<any[]>('api/questions')
-}
 
-getQuestionsByCatalogueId(catalogueId: number): Observable<any[]> {
-  const params = new HttpParams().set('idcatalogue', catalogueId.toString());
-  return this.http.get<any[]>('api/questions/catalogue', { params });
-}
-
-createQuestion(QuestionDto:any):Observable<any>{
-  return this.http.post('api/questions',QuestionDto)}
 
   getUserById(id: any): Observable<any> {
     return this.http.get<any>(`api/users/${id}`);
