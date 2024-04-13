@@ -25,31 +25,26 @@ export class AdminFaqComponent {
     this.auth.getAllFaqs().subscribe(data => {
       this.questionsAndAnswers = data;})}
   
-  //3-methode post faqs
-  AddFaq(): void {
-    if (this.faq.question.trim() !== '' && this.faq.answer.trim() !== ''){
-        this.auth.createFaq(this.faq).subscribe(
-          response => {
-          // Afficher un message de succès à l'utilisateur si nécessaire
-          console.log('Article créé avec succès:', response);
-          alert('FAQ created successfully'); 
-          this.resetFields();
+ 
+//3-methode post faqs
+AddFaq(): void {
   
-          },
-          error => {
-                  // Afficher un message d'erreur à l'utilisateur si nécessaire
-                  console.error('Erreur lors de la création de l\'article:', error);
-                  alert("Error creating the FAQ"); 
-  
-          }
-        );
-  }
-  else {
-    // Display a message to the user indicating that all fields are required
-    alert('Please fill out all fields');
-    }
-  }
-  
+      this.auth.createFaq(this.faq).subscribe(
+        response => {
+        // Afficher un message de succès à l'utilisateur si nécessaire
+        console.log('Article créé avec succès:', response);
+        alert('FAQ created successfully'); 
+        this.resetFields();
+
+        },
+        error => {
+                // Afficher un message d'erreur à l'utilisateur si nécessaire
+                alert("Error creating the FAQ"); 
+
+        }
+      );
+
+}
   //4 methode remove faq
   removeFaq(id: number): void {
     console.log("id=",id)
