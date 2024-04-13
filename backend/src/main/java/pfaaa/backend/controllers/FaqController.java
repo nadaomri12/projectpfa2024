@@ -21,13 +21,13 @@ public class FaqController {
         return ResponseEntity.ok(faqService.createFaq(faq));
     }
     //2-getfaq
-    @GetMapping("/faqs")
+    @GetMapping("/catalogues")
     public ResponseEntity<List<FAQ>> getAllFaqs() {
         List<FAQ> AllUsers = faqService.getALLFaqs();
         return ResponseEntity.ok().body(AllUsers);
     }
     //3-RemoveFaq
-    @DeleteMapping("faqs/{id}")
+    @DeleteMapping("catalogues/{id}")
     public void deleteFaqs(@PathVariable("id") long id) {
         faqService.deleteFaq(id);
     }
