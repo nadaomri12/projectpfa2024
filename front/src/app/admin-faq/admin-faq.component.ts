@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { LoginService } from '../services/login.service';
-import { FAQ } from '../FAQ';
+import { FAQ } from '../faq';
 
 @Component({
   selector: 'app-admin-faq',
