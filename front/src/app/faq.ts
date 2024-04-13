@@ -1,4 +1,4 @@
-export interface Faq {
+export interface FAQ {
     id: number;
     question:string;
     answer:string;

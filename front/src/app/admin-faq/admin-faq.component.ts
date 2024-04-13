@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { LoginService } from '../services/login.service';
-import { Faq } from '../faq';
+import { FAQ } from '../faq';
 
 @Component({
   selector: 'app-admin-faq',
@@ -10,7 +10,7 @@ import { Faq } from '../faq';
 export class AdminFaqComponent {
   questionsAndAnswers: any[]=[];
 
-  faq: Faq = {
+  faq: FAQ = {
     id: 0, // ou toute autre valeur par défaut
    question:'',
    answer:''
