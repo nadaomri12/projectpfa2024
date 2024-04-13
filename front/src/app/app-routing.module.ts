@@ -36,7 +36,7 @@ const routes: Routes = [
  {path:'register',component:SignUpComponent},
  {path:'contact',component:ContactComponent},
  {path:'review',component:TestimonialComponent},
- {path:'faq',component:FaqComponent},
+ {path:'faqq',component:FaqComponent},
 
  {path:'authadmin',component:AuthAdminlayoutComponent},
  {path:'',component:HomeComponent},

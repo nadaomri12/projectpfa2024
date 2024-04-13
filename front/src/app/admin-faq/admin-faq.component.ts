@@ -19,7 +19,7 @@ export class AdminFaqComponent {
   ngOnInit(): void {
     this.getAllFaqs();
 
-
+console.log("heloo this faq",this.faq)
 }
   getAllFaqs(): void {
     this.auth.getAllFaqs().subscribe(data => {
@@ -27,7 +27,7 @@ export class AdminFaqComponent {
   
  
 //3-methode post faqs
-AddFaq(): void {
+AddFaq() {
   console.log("voila faq",this.faq)
       this.auth.createFaq(this.faq).subscribe(
         response => {
@@ -38,7 +38,7 @@ AddFaq(): void {
 
         },
         error => {
-                // Afficher un message d'erreur à l'utilisateur si nécessaire
+          console.log("hi",this.faq)
                 alert("Error creating the FAQ"); 
 
         }
