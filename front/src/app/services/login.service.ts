@@ -59,14 +59,14 @@ deleteEmailSubscription(id: number): Observable<void> {
 
 
 getAllFaqs():Observable<any>{
-  return this.http.get<any[]>('api/faqs')
+  return this.http.get<any[]>( `api/faqs`)
 }
 createFaq(faq:any):Observable<any>{
-  return this.http.post( `/api/faqs`,faq)
+  return this.http.post( `api/faqs`,faq)
 }
 
 removeFaq(id:number):Observable<any>{
-  return this.http.delete<any>(`api/faqs/${id}`);
+  return this.http.delete<any>(`api/faqs${id}`);
 }
 
 
