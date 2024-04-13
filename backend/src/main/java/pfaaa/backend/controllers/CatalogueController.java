@@ -16,7 +16,7 @@ import java.util.Optional;
 public class CatalogueController {
     private final CatalogueService catalogueService;
     private final CatalogueMapper catalogueMapper;
-
+/*kkk
 /*
     @PostMapping("/catalogue")
     public CatalogueDto addCatalogue(@RequestBody CatalogueDto catalogueDto) {
