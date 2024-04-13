@@ -16,18 +16,18 @@ public class FaqController {
         this.faqService=faqService;
     }
     //1-postfaq
-    @PostMapping("/catalogues")
+    @PostMapping("/cataloguess")
     public ResponseEntity<FAQ> CreateFaq(@RequestBody FAQ faq) {
         return ResponseEntity.ok(faqService.createFaq(faq));
     }
     //2-getfaq
-    @GetMapping("/catalogues")
+    @GetMapping("/cataloguess")
     public ResponseEntity<List<FAQ>> getAllFaqs() {
         List<FAQ> AllUsers = faqService.getALLFaqs();
         return ResponseEntity.ok().body(AllUsers);
     }
     //3-RemoveFaq
-    @DeleteMapping("catalogues/{id}")
+    @DeleteMapping("cataloguess/{id}")
     public void deleteFaqs(@PathVariable("id") long id) {
         faqService.deleteFaq(id);
     }
