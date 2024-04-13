@@ -1,7 +1,9 @@
-FROM openjdk:17
+FROM openjdk:21 as build
 ARG JARFILE=target/*.jar
 WORKDIR /app
+CMD ./mvnw clean package -f pom.xml
 
-COPY  /target/Backend.jar  backendpfaa.jar
+FROM build
+COPY  /app/target/Backend.jar  backendpfaa.jar
 EXPOSE 8080
 ENTRYPOINT ["java","-jar","backendpfaa.jar"]
