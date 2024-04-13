@@ -56,35 +56,24 @@
                 </li>
             </ul>
             <div class="over-lay" *ngIf="AfficheCard">
-
-
                 <div class="card2">
-
                     <div class="sub-menu-wrap">
                         <div class="sub-menu">
-
-
                             <div class="user-info">
-
-                                <h6>{{client.email}} <i class="fas fa-times"(click)="close()"></i>
+                                <h6>
+                                    {{ client.email ? client.email : 'admin@gmail.com' }} <i class="fas fa-times" (click)="close()"></i>
                                 </h6>
-
                             </div>
                             <hr>
-                         
-                           
-                            
-                            <a  (click)="logout()" class="sub-menu-link">
-                                <img
-                                    src="https://static.vecteezy.com/system/resources/previews/000/575/503/original/vector-logout-sign-icon.jpg"style="font-size:24px; background-color:#FF6F61">
+                            <a (click)="logout()" class="sub-menu-link">
+                                <img src="https://static.vecteezy.com/system/resources/previews/000/575/503/original/vector-logout-sign-icon.jpg" style="font-size:24px; background-color:#FF6F61">
                                 <p>Se déconnecter</p>
                             </a>
-                         </div>
-                    </div>
-            
-            
+                        </div>
                     </div>
                 </div>
+            </div>
+            
             </div>
         </div>
 </nav>
