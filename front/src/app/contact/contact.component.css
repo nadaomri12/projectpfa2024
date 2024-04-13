@@ -41,3 +41,7 @@
     font-size: 1rem;
     margin-bottom: 5px;
 }
+.contact-form input {
+    border: 1px solid #ccc; /* Ajoute une bordure de 1 pixel solide avec une couleur grise */
+    border-radius: 5px; /* Ajoute un arrondi de 5 pixels aux coins des champs de saisie */
+}
