@@ -25,12 +25,12 @@ import { AuthAdminlayoutComponent } from './auth-adminlayout/auth-adminlayout.co
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { OrdersComponent } from './orders/orders.component';
 import { FaqComponent } from './faq/faq.component';
+import { AdminFaqComponent } from './admin-faq/admin-faq.component';
 const routes: Routes = [
 
  {path:'product',component: ProductComponent},
  { path: 'detailproduit/:id', component: ProduitdetailComponent },
  {path:'cart',component:CartComponent},
- {path:'',component:HomeComponent},
  {path:'searchprod/:nameprod', component:SearchprodComponent},
  {path:'login',component:SignInComponent},
  {path:'register',component:SignUpComponent},
@@ -39,6 +39,7 @@ const routes: Routes = [
  {path:'faq',component:FaqComponent},
 
  {path:'authadmin',component:AuthAdminlayoutComponent},
+ {path:'',component:HomeComponent},
 
 {
   path: 'admin',
@@ -46,7 +47,7 @@ const routes: Routes = [
   children: [
   {path:'dashboard',component:DashboardComponent},
     { path: 'addproduct', component: AddproductComponent },
-    {path:'faq',component:FaqComponent},
+    {path:'faq',component:AdminFaqComponent},
 
     { path: 'addcategory', component: AddcategoryComponent },
     { path: 'updatecategory/:id', component: UpdatecategoryComponent },
