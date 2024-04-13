@@ -72,6 +72,9 @@ resetFields(){
   this.faq.answer=''
   this.faq.question=''
 }
+logout() {
+  this.auth.signOut();
+}
 //2-methode de toggle
 toggleQuestion(event: MouseEvent): void {
   const target = event.target as HTMLElement;
