@@ -1,9 +1,11 @@
 package pfaaa.backend.controllers;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import pfaaa.backend.entity.FAQ;
 import pfaaa.backend.service.FaqService;
+import lombok.RequiredArgsConstructor;
 
 import java.util.List;
 @RestController

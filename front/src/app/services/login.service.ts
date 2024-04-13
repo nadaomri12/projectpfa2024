@@ -59,21 +59,17 @@ deleteEmailSubscription(id: number): Observable<void> {
 
 
 getAllFaqs():Observable<any>{
-  return this.http.get<any[]>( `api/faqs`)
+  return this.http.get<any[]>( `/api/faqs`)
 }
 createFaq(faq:any):Observable<any>{
-  return this.http.post( `api/faqs`,faq)
+  console.log(faq)
+  return this.http.post<any>( `/api/faqs`,faq)
 }
 
 removeFaq(id:number):Observable<any>{
   return this.http.delete<any>(`api/faqs${id}`);
 }
-
-
-
-
-
-  getAllCategorie():Observable<any>{
+ getAllCategorie():Observable<any>{
     return this.http.get<Categorie[]>('api/catalogues')
   }
 
