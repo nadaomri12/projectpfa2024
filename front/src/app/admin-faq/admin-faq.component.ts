@@ -38,7 +38,7 @@ AddFaq() {
         },
         error => {
           console.log("hi",this.faq)
-                alert("Erroree creating the FAQ"); 
+                alert("Error creating the FAQ"); 
 
         }
       );
