@@ -68,9 +68,10 @@
                         Date de votre commande: {{ commandes[0].facture.date | date: 'dd/MM/yyyy' }}
                     </h5>                </div>
                     <div>
-                        <button class="send-button d-inline-block">Payer</button>
+                        <button class="send-button d-inline-block mr-2">Payer</button> <!-- Ajouter une marge à droite -->
                         <button (click)="closePopup()" class="send-button d-inline-block">Retour</button>
                     </div>
+                    
 
             </div>
         </div>
