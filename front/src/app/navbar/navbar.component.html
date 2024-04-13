@@ -55,13 +55,13 @@
                     </div>
                 </li>
             </ul>
-            <div class="over-lay" *ngIf="AfficheCard" style="font-size: 14px;">
+            <div class="over-lay" *ngIf="AfficheCard" >
                 <div class="card2" > <!-- Ajuster la taille de la police -->
                     <div class="sub-menu-wrap">
                         <div class="sub-menu">
                             <div class="user-info">
                                 <h6>
-                                    {{ client.email ? client.email : 'admin@gmail.com' }} <i class="fas fa-times" (click)="close()" style="font-size: 16px;"></i> <!-- Ajuster la taille de l'icône -->
+                                    {{ client.email ? client.email : 'admin@gmail.com' }} <i class="fas fa-times" (click)="close()" ></i> <!-- Ajuster la taille de l'icône -->
                                 </h6>
                             </div>
                             <hr>

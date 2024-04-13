@@ -9,7 +9,6 @@ import java.util.List;
 @RestController
 @RequestMapping(path = "/api")
 public class FaqController {
-@Autowired
     private final FaqService faqService;
     public FaqController(FaqService faqService){
         this.faqService=faqService;
