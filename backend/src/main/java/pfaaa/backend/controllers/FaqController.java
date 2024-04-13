@@ -7,8 +7,7 @@ import pfaaa.backend.service.FaqService;
 
 import java.util.List;
 @RestController
-@CrossOrigin(origins = "http://localhost:4200")
-@RequestMapping(path = "api/")
+@RequestMapping(path = "/api")
 public class FaqController {
 @Autowired
     private final FaqService faqService;

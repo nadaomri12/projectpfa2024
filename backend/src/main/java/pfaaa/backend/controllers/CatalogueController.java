@@ -12,8 +12,6 @@ import java.util.Optional;
 
 @RestController
 @RequiredArgsConstructor
-@CrossOrigin(origins = "http://localhost:4200")
-// hadhi tnajem tna7iha tawa puisque 3endek class te3 configuration fih cross
 @RequestMapping(path = "/api")
 public class CatalogueController {
     private final CatalogueService catalogueService;
