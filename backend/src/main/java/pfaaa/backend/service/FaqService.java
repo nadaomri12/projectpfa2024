@@ -26,9 +26,9 @@ public class FaqService {
 
     public FAQ createFaq(FAQ faq) {
         // Vérifier si l'Faq existe déjà
-        if (faqRepository.existsById(faq.getId())) {
-            // Si Faq existe déjà, une exception est levée
-            throw new RuntimeException("faq already exists");
+        if (faqRepository.existsByQuestion(faq.getQuestion())) {
+            // Si Faq existe déjà avec la même question, une exception est levée
+            throw new RuntimeException("FAQ with the same question already exists");
         }
         // Enregistrer l'faq dans la base de données
         return faqRepository.save(faq); // Retourner le faq enregistré

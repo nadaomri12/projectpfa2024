@@ -5,4 +5,6 @@ import org.springframework.stereotype.Repository;
 import pfaaa.backend.entity.FAQ;
 @Repository
 public interface FaqRepository extends JpaRepository<FAQ, Long> {
+    boolean existsByQuestion(String question);
+
 }
