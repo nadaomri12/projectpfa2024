@@ -46,10 +46,6 @@
                                     (click)="show()" style="font-size:2px;height: 40px;width: 40px;margin-left: 140px;"> 
                             </div>
                         </ng-container>
-                        <ng-container *ngIf="isLoggedIn && client.id  !== 1">
-                            <button type="button"   (click)="logout()" class="blanc"><b>Se déconnecter</b></button>
-
-                        </ng-container>
                         
                         <ng-container *ngIf="!isLoggedIn">
                             <!-- Afficher les boutons "Sign in" et "Register" -->
@@ -75,13 +71,17 @@
 
                             </div>
                             <hr>
-                           
+                            <a routerLink="/infoSetting" class="sub-menu-link">
+                                <img src="https://img.freepik.com/icones-gratuites/utilisateur_318-563642.jpg?w=360"
+                                    style='font-size:24px;background-color:#FF6F61;'>
+                                <p  >Edit Profile</p>
+                            </a>
                            
                             
                             <a  (click)="logout()" class="sub-menu-link">
                                 <img
                                     src="https://static.vecteezy.com/system/resources/previews/000/575/503/original/vector-logout-sign-icon.jpg"style="font-size:24px; background-color:#FF6F61">
-                                <p>Se déconnecter</p>
+                                <p>LogOut</p>
                             </a>
                          </div>
                     </div>
