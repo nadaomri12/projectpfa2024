@@ -28,6 +28,8 @@ public class CatalogueController {
 
     @PostMapping ("/catalogue")
     public CatalogueDto addCatalogue(@RequestBody CatalogueDto catalogueDto) {
+        System.out.println("hello from post catalogue");
+
         Catalogue catalogueToadd= new Catalogue(); //  creation de catalogue
         catalogueToadd.setNomCatalogue(catalogueDto.nomCatalogue); //setNomcatalogue a partir de catalogueDto
         Catalogue savedcatalogue=catalogueService.addCatalogue(catalogueToadd); // add catalogue

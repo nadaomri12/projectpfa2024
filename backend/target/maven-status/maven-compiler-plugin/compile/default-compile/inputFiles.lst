@@ -3,6 +3,7 @@ C:\ProgramData\oussema\backend\src\main\java\pfaaa\backend\entity\itemrequest.ja
 C:\ProgramData\oussema\backend\src\main\java\pfaaa\backend\Repository\FactureRepository.java
 C:\ProgramData\oussema\backend\src\main\java\pfaaa\backend\service\CommandeService.java
 C:\ProgramData\oussema\backend\src\main\java\pfaaa\backend\Token\TokenType.java
+C:\ProgramData\oussema\backend\src\main\java\pfaaa\backend\service\FaqService.java
 C:\ProgramData\oussema\backend\src\main\java\pfaaa\backend\dto\Cartitemdto.java
 C:\ProgramData\oussema\backend\src\main\java\pfaaa\backend\auth\AuthenticationController.java
 C:\ProgramData\oussema\backend\src\main\java\pfaaa\backend\entity\Client.java
@@ -28,6 +29,7 @@ C:\ProgramData\oussema\backend\src\main\java\pfaaa\backend\entity\Role.java
 C:\ProgramData\oussema\backend\src\main\java\pfaaa\backend\BackendApplication.java
 C:\ProgramData\oussema\backend\src\main\java\pfaaa\backend\service\LignedecommandeService.java
 C:\ProgramData\oussema\backend\src\main\java\pfaaa\backend\Repository\mailRepository.java
+C:\ProgramData\oussema\backend\src\main\java\pfaaa\backend\Repository\FaqRepository.java
 C:\ProgramData\oussema\backend\src\main\java\pfaaa\backend\controllers\CommandeController.java
 C:\ProgramData\oussema\backend\src\main\java\pfaaa\backend\entity\Admin.java
 C:\ProgramData\oussema\backend\src\main\java\pfaaa\backend\controllers\FactureController.java
@@ -35,6 +37,7 @@ C:\ProgramData\oussema\backend\src\main\java\pfaaa\backend\entity\Email.java
 C:\ProgramData\oussema\backend\src\main\java\pfaaa\backend\entity\Commande.java
 C:\ProgramData\oussema\backend\src\main\java\pfaaa\backend\entity\Fournisseur.java
 C:\ProgramData\oussema\backend\src\main\java\pfaaa\backend\Repository\ProduitRepository.java
+C:\ProgramData\oussema\backend\src\main\java\pfaaa\backend\entity\FAQ.java
 C:\ProgramData\oussema\backend\src\main\java\pfaaa\backend\entity\Contact.java
 C:\ProgramData\oussema\backend\src\main\java\pfaaa\backend\auth\AuthenticationRequestdto.java
 C:\ProgramData\oussema\backend\src\main\java\pfaaa\backend\service\ContactService.java
@@ -70,6 +73,7 @@ C:\ProgramData\oussema\backend\src\main\java\pfaaa\backend\controllers\emailcont
 C:\ProgramData\oussema\backend\src\main\java\pfaaa\backend\entity\LignedeComande.java
 C:\ProgramData\oussema\backend\src\main\java\pfaaa\backend\Repository\ContactRepository.java
 C:\ProgramData\oussema\backend\src\main\java\pfaaa\backend\service\ArticlePanierService.java
+C:\ProgramData\oussema\backend\src\main\java\pfaaa\backend\service\Userservice.java
 C:\ProgramData\oussema\backend\src\main\java\pfaaa\backend\entity\Review.java
 C:\ProgramData\oussema\backend\src\main\java\pfaaa\backend\entity\Produit.java
 C:\ProgramData\oussema\backend\src\main\java\pfaaa\backend\entity\Catalogue.java
@@ -83,3 +87,4 @@ C:\ProgramData\oussema\backend\src\main\java\pfaaa\backend\dto\updateproduitdto.
 C:\ProgramData\oussema\backend\src\main\java\pfaaa\backend\service\ClientService.java
 C:\ProgramData\oussema\backend\src\main\java\pfaaa\backend\Repository\CatalogueRepository.java
 C:\ProgramData\oussema\backend\src\main\java\pfaaa\backend\service\CartService.java
+C:\ProgramData\oussema\backend\src\main\java\pfaaa\backend\controllers\FaqController.java
