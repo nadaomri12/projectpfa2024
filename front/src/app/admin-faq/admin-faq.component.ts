@@ -11,7 +11,6 @@ export class AdminFaqComponent {
   questionsAndAnswers: any[]=[];
 
   faq: FAQ = {
-    id: 0, // ou toute autre valeur par défaut
    question:'',
    answer:''
   };
