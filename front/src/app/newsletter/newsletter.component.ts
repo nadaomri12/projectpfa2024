@@ -61,7 +61,9 @@ sendNewsletter(){
       }
     })
   }
-
+  logout() {
+    this.auth.signOut();
+  }
 
   deleteEmailSubscription(id: number): void {
     this.auth.deleteEmailSubscription(id).subscribe(

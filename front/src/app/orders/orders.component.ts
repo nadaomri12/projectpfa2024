@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CartserviceService } from '../services/cartservice.service';
 import { Router } from '@angular/router';
+import { LoginService } from '../services/login.service';
 @Component({
   selector: 'app-orders',
   templateUrl: './orders.component.html',
@@ -15,13 +16,16 @@ export class OrdersComponent {
   }
 
   showPopup: boolean = false;
-  constructor(private cartservice: CartserviceService,private router: Router){
+  constructor(private cartservice: CartserviceService,private router: Router,private auth: LoginService){
     
   }
 
   closePopup(): void {
     this.showPopup = false;
    
+  }
+  logout() {
+    this.auth.signOut();
   }
   openPopup(id: any): void {
     this.id = id; // Affectez la valeur de l'ID passé en paramètre à this.id

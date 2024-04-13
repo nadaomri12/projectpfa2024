@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { SerrviceService } from '../services/serrvice.service';
+import { LoginService } from '../services/login.service';
 
 @Component({
   selector: 'app-products-admin',
@@ -10,7 +11,8 @@ export class ProductsAdminComponent {
   products: any;
   product:any
   categories:any
-  constructor(private Service:SerrviceService){
+  constructor(private Service:SerrviceService,  private auth: LoginService
+  ){
   
   }
   getcategory(){
@@ -30,8 +32,9 @@ export class ProductsAdminComponent {
       }
     );
   }
- 
-
+  logout() {
+    this.auth.signOut();
+  }
 
   refreshProductList() {
     // Rafraîchissez la liste des produits ici après la suppression si nécessaire
