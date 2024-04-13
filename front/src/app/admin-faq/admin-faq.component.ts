@@ -28,7 +28,7 @@ export class AdminFaqComponent {
  
 //3-methode post faqs
 AddFaq(): void {
-  
+  console.log("voila faq",this.faq)
       this.auth.createFaq(this.faq).subscribe(
         response => {
         // Afficher un message de succès à l'utilisateur si nécessaire
