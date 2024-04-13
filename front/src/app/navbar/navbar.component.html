@@ -56,23 +56,24 @@
                 </li>
             </ul>
             <div class="over-lay" *ngIf="AfficheCard">
-                <div class="card2">
+                <div class="card2" style="font-size: 14px;"> <!-- Ajuster la taille de la police -->
                     <div class="sub-menu-wrap">
                         <div class="sub-menu">
                             <div class="user-info">
                                 <h6>
-                                    {{ client.email ? client.email : 'admin@gmail.com' }} <i class="fas fa-times" (click)="close()"></i>
+                                    {{ client.email ? client.email : 'admin@gmail.com' }} <i class="fas fa-times" (click)="close()" style="font-size: 16px;"></i> <!-- Ajuster la taille de l'icône -->
                                 </h6>
                             </div>
                             <hr>
                             <a (click)="logout()" class="sub-menu-link">
-                                <img src="https://static.vecteezy.com/system/resources/previews/000/575/503/original/vector-logout-sign-icon.jpg" style="font-size:24px; background-color:#FF6F61">
-                                <p>Se déconnecter</p>
+                                <img src="https://static.vecteezy.com/system/resources/previews/000/575/503/original/vector-logout-sign-icon.jpg" style="font-size: 20px; background-color:#FF6F61; width: 24px;"> <!-- Ajuster la taille de l'image -->
+                                <p style="font-size: 14px;">Se déconnecter</p> <!-- Ajuster la taille du texte -->
                             </a>
                         </div>
                     </div>
                 </div>
             </div>
+            
             
             </div>
         </div>
