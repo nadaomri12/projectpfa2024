@@ -45,7 +45,7 @@
 
                 <li class="nav-item">
                     <div class="boutonAlign">
-                        <ng-container *ngIf="isLoggedIn ">
+                        <ng-container *ngIf="isLoggedIn && !isAdmin">
                             <div class="imageicon">
                                 <img src="https://img.freepik.com/icones-gratuites/utilisateur_318-563642.jpg?w=360"
                                     (click)="show()" style="font-size:2px;height: 40px;width: 40px;margin-left: 140px;"> 
