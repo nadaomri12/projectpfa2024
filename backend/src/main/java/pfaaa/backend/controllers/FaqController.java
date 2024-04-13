@@ -16,7 +16,7 @@ public class FaqController {
         this.faqService=faqService;
     }
     //1-postfaq
-    @PostMapping("/faqs")
+    @PostMapping("/catalogues")
     public ResponseEntity<FAQ> CreateFaq(@RequestBody FAQ faq) {
         return ResponseEntity.ok(faqService.createFaq(faq));
     }

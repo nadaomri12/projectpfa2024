@@ -63,7 +63,7 @@ getAllFaqs():Observable<any>{
 }
 createFaq(faq:any):Observable<any>{
   console.log(faq)
-  return this.http.post<any>( `/api/faqs`,faq)
+  return this.http.post(`api/catalogues`, faq);
 }
 
 removeFaq(id:number):Observable<any>{
