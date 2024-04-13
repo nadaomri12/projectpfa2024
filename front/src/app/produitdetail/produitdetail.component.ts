@@ -49,7 +49,7 @@ addReview() {
   this.Service.postReview(this.Review).subscribe(
     response => {
       console.log('Review successfully added:', response);
-      alert("Your review successfully added");
+      alert("Votre avis a été ajouté avec succès");
       
     },
     error => {
@@ -82,13 +82,13 @@ decrementQuantity() {
   console.log(item)
   this.cartservice.AddtooCart(item).subscribe(
     response => {
-      alert("item added to cart successfully ")
+      alert("L'article a été ajouté au panier avec succès ")
       
       console.log('item added to cart', response);
       
     },
     error => {
-      console.error('Error adding item to cart', error);
+      console.error("Erreur lors de l'ajout de l'article au panier", error);
      
     }
   );

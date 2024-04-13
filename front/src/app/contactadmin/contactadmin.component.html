@@ -15,33 +15,35 @@
 <div class="dashboard-container">
    
     <div  class="sidebar">
-    <ul>
-        <li><a routerLink="/admin/dashboard">Dashboard</a></li>
-        <li><a routerLink="/admin/categorie" >Categories</a></li>
-        
-        <li><a routerLink="/admin/newsletter" >Newsletter</a></li>
-        
-        <li><a routerLink="/admin/productaadmin">Articles</a></li>
-        <li><a routerLink="/admin/contactadmin" style="color:#FF6F61;">Contacts</a></li>
-        
+        <ul>
+            <li><a routerLink="/admin/dashboard">Tableau de bord</a></li>
 
-        <li><a routerLink="/admin/orders">Commandes</a></li>
-        
+            <li><a routerLink="/admin/categorie">Catégories</a></li>
+            
+            <li><a routerLink="/admin/newsletter" >Newsletter</a></li>
+            
+            <li><a routerLink="/admin/productaadmin" >Articles</a></li>
 
-        <li><a routerLink="/admin/aboutclient">utilisateurs</a></li>
+            <li><a routerLink="/admin/contactadmin" style="color:#FF6F61;">Contacts</a></li>
+
+            <li><a routerLink="/admin/orders">Commandes</a></li>
+            
+
+            <li><a routerLink="/admin/aboutclient">Utilisateurs</a></li>
         
-    </ul>
+        </ul><li><a>Se déconnecter</a></li>
+   
 </div>
 
 <div class="main-content">
-    <h2 style="color: #2B3674; text-align: center;">Users Contact</h2>
+    <h2 style="color: #2B3674; text-align: center;">Contacts des utilisateurs</h2>
     <table>
         <thead>
             <tr>
                 <th>ID</th>
-                <th> Name</th>
+                <th> Nom</th>
                 <th>Email</th>
-                <th>Subject</th>
+                <th>Objet</th>
                 <th>Message</th>
                 
                 <th>Action</th>
@@ -55,7 +57,7 @@
                 <td>{{ contact.subject }}</td>
                 <td>{{ contact.message }}</td>
                 <td>
-                    <button (click)="openPopup(contact)" class="move">Reply</button>
+                    <button (click)="openPopup(contact)" class="move">Répondre</button>
                 </td>
             </tr>
         </tbody>
@@ -64,11 +66,11 @@
      <div *ngIf="showPopup" class="popup">
         <div class="popup-content">
             <span class="close" (click)="closePopup()">&times;</span>
-            <h3>Reply to Contact</h3>
+            <h3>Répondre aux contacts</h3>
             <div>
                 <label for="replyMessage">Message:</label><br>
                 <textarea id="replyMessage" name="replyMessage" [(ngModel)]="replyMessage" rows="4" cols="50"></textarea>
             </div>
-            <button (click)="replyToContact()" class="send-button">Send</button>
+            <button (click)="replyToContact()" class="send-button">Envoyer</button>
         </div>
     </div>

@@ -1,0 +1,232 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.dashboard-container {
+    display: flex;
+}
+
+.container {
+    display: flex;
+}
+
+.sidebar {
+    width: 350px;
+    /* Ajoutez d'autres styles selon vos besoins */
+}
+
+.main-content {
+    flex-grow: 1;
+    /* Cela permet au contenu principal de prendre autant d'espace disponible que possible */
+    /* Ajoutez d'autres styles selon vos besoins */
+}
+
+
+.sidebar {
+    color: #fff;
+    width: 350px;
+    padding: 20px;
+}
+
+.sidebar h2 {
+    margin-bottom: 20px;
+    color:#8D8D8D;
+
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin-bottom: 10px;
+    margin-top: 20PX;
+}
+textarea {
+    width: 100%;
+    padding: 20px;
+    font-size: 16px;
+    border-color: #8D8D8D; /* Élimine le bord */
+    border-radius: 50px;
+    
+
+}
+.sidebar ul li a {
+    color:#8D8D8D;
+    text-decoration: none;
+}
+.container {
+    display: flex;
+    justify-content: center; /* Aligne horizontalement au centre */
+    align-items: center; /* Aligne verticalement au centre */
+}
+
+.container img {
+    max-width: 100%; /* Garantit que l'image ne dépasse pas la largeur de la div */
+    max-height: 100%; /* Garantit que l'image ne dépasse pas la hauteur de la div */
+}
+
+
+
+
+
+.newsletter-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.newsletter-form label {
+    margin-bottom: 10px;
+}
+
+.newsletter-form input[type="email"] {
+    padding: 10px;
+    margin-bottom: 10px;
+}
+.blanc{
+    border-radius: 20%;
+    color: black;
+    border-color: #9747FF;
+    background-color: #fff;
+
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 50px;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+.newsletter-form button {
+    color: #624BFF;
+    cursor: pointer;
+    background-color: #fff;
+    width: 100px;
+    height:40px;
+    border-radius: 30px;
+    border-color: #9747FF;
+    margin-top: 30px;
+}
+
+.newsletter-form button:hover {
+    background-color: #555;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'DM Sans';
+    font-style: normal;
+    height: 100vh;
+    background:#fff
+    ;
+}
+.main-content{
+    margin-left: 250px;
+}
+.title {
+    text-align: center;
+    align-items: center;
+    letter-spacing: -1px;
+    color: #88B702;
+    font-weight: 700;
+    font-size: 80px;
+    line-height: 106px;
+    padding-top: 80px;
+    font-family: 'DM Sans';
+    font-style: normal;
+}
+
+
+.questions-container {
+    box-shadow: 8px 8px 8px 8px rgba(0, 0, 0, 0.1); /* Add shadow effect */
+    border-radius: 8px; /* Add some border radius for rounded corners */
+    max-width: 500px;
+    margin-top: 40px;
+    margin-left: 100px;
+    border-color: #9747FF;
+}
+
+.question {
+    border-bottom: 1px solid #9747FF;
+}
+
+.question button {
+    width: 100%;
+    background-color:#fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 15px;
+    border: none;
+    outline: none;
+    font-size: 22px;
+    color: black;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.question p {
+    font-size: 22px;
+    max-height: 0;
+    opacity: 0;
+    line-height: 1.5;
+    overflow: hidden;
+    transition: all 0.6s ease;
+    font-family: 'DM Sans';
+    font-style: normal;
+    color:#9747FF;
+}
+
+.d-arrow {
+    transition: transform 0.5s ease-in;
+    color: #fff;
+}
+
+.move{
+    border-radius: 20%;
+    color: black;
+    border-color: #9747FF;
+    background-color: #fff;
+
+}
+.red{
+    border-radius: 20%;
+    color: black;
+    border-color: red;
+    background-color: #fff;
+    margin-top: 30px;
+    height: 40px;
+    width: 60px;
+    margin-left: 10px;
+}
+/*add this class when click*/
+.question p.show {
+    max-height: 200px;
+    opacity: 1;
+    padding: 0px 15px 30px 15px;
+    background-color: #9747FF;
+    color:#fff
+}
+.main-content{
+    margin-right: 30%;
+}
+
+.question button .d-arrow.rotate {
+    transform: rotate(180deg);
+}

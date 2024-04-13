@@ -1,0 +1,77 @@
+<header>
+    <div class="navbar navbar-dark shadow-sm" style=" background-color: #FF6F61;">
+        <div class="navbar-brand align-item-center d-flex">
+            <i style="font-size: 40px;" class="fas fa-shipping-fast">&nbsp;
+                
+            </i>
+            <strong style="font-size: 30px;">E-SHOP</strong>
+        </div>
+        <button  class="btn">
+            <i style="font-size: 30px;" class="fas fa-user "></i>
+           
+        </button>
+    </div>
+</header>
+<div class="dashboard-container">
+   
+    <div  class="sidebar">
+        <ul>
+            <li><a routerLink="/admin/dashboard">Tableau de bord</a></li>
+
+            <li><a routerLink="/admin/categorie">Catégories</a></li>
+            
+            <li><a routerLink="/admin/newsletter" >Newsletter</a></li>
+            
+            <li><a routerLink="/admin/productaadmin" style="color:#FF6F61;">Articles</a></li>
+
+            <li><a routerLink="/admin/contactadmin" >Contacts</a></li>
+
+            <li><a routerLink="/admin/orders">Commandes</a></li>
+            
+
+            <li><a routerLink="/admin/aboutclient">Utilisateurs</a></li>
+        
+        </ul><li><a routerLink="/admin/faq" style="color:#FF6F61;">faq</a></li>
+    </div>
+    <div class="main-content">
+        <h3 style="color:#2B3674;">FAQ</h3>
+        <div class="questions-container">
+            <div *ngFor="let qa of questionsAndAnswers">
+                <div class="row">
+                    <div class="col-md-10">
+                        <div class="question">
+                            <button (click)="toggleQuestion($event)">
+                                {{ qa.question }}
+                                <i class="fas fa-chevron-down d-arrow"></i>
+                            </button>
+                            <p>{{ qa.answer }}</p>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="action-buttons">
+                            <div class="button-container">
+                                <button (click)="removeFaq(qa.id)" class="red">Remove</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-10">
+                    <div class="question">
+                        <button (click)="toggleQuestion($event)">
+                            <input type="text" style="border: none;" [(ngModel)]="faq.question" name="faqQuestion" required placeholder="write your faq">
+                            <i class="fas fa-chevron-down d-arrow"></i>
+                        </button>
+                        <p><input type="text" style="border:none;" [(ngModel)]="faq.answer" name="faqAnswer" placeholder="your answer" required></p>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="action-buttons">
+                        <div class="button-container">
+                            <button class="red" (click)="AddFaq()">Add</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>

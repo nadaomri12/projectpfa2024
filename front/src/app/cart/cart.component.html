@@ -60,13 +60,18 @@
 
         <div *ngIf="showPopup" class="popup">
             <div class="popup-content">
-                <span class="close" (click)="closePopup()">&times;</span>
                 <h3><span><i class="fas fa-credit-card"></i></span> Votre  Facture</h3>
                 <div class="card-body">
                     <h4 class="card-title"><i class="fa fa-credit-card"  style="color:#FF6F61"></i> Montant à payer:{{ commandes[0].facture.montantpayer }}</h4>
-                    <h5 class="card-title"><i class="fas fa-calendar-alt" style="color:#FF6F61"></i> Date du votre commande:{{ commandes[0].facture.date }}</h5>
-                </div>
-                <button class="send-button">Payer</button>
+                    <h5 class="card-title">
+                        <i class="fas fa-calendar-alt" style="color:#FF6F61"></i> 
+                        Date de votre commande: {{ commandes[0].facture.date | date: 'dd/MM/yyyy' }}
+                    </h5>                </div>
+                    <div>
+                        <button class="send-button d-inline-block">Payer</button>
+                        <button (click)="closePopup()" class="send-button d-inline-block">Retour</button>
+                    </div>
+
             </div>
         </div>
         

@@ -105,6 +105,11 @@ showPopup: boolean = false;
       }
     );
   }
+  closePopup(): void {
+    this.showPopup = false;
+    // Réinitialiser le message de réponse lorsque la popup est fermée
+    
+  }
   Addcommande() {
     console.log(this.commandeDto);
     this.cartservice.addcommande(this.commandeDto).subscribe(
@@ -131,11 +136,7 @@ showPopup: boolean = false;
     }
 }
  
-  closePopup(): void {
-    this.showPopup = false;
 
-    
-  }
   getcommandeclient(){
     console.log(this.idclient)
     console.log(this.commandes)

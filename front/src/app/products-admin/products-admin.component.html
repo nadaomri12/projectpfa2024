@@ -16,9 +16,9 @@
    
         <div  class="sidebar">
         <ul>
-            <li><a routerLink="/admin/dashboard">Dashboard</a></li>
+            <li><a routerLink="/admin/dashboard">Tableau de bord</a></li>
 
-            <li><a routerLink="/admin/categorie">Categories</a></li>
+            <li><a routerLink="/admin/categorie">Catégories</a></li>
             
             <li><a routerLink="/admin/newsletter" >Newsletter</a></li>
             
@@ -31,7 +31,7 @@
 
             <li><a routerLink="/admin/aboutclient">Utilisateurs</a></li>
         
-        </ul><li><a>LogOut</a></li>
+        </ul><li><a>Se déconnecter</a></li>
     </div>
         
        
@@ -44,9 +44,9 @@
              <div class="sidebar-widget category">
                 
                 <nav class="navbar bg-light">
-                    <label for="categorySelect" class="mr-2">Category:</label>
+                    <label for="categorySelect" class="mr-2">Catégorie:</label>
                     <select id="categorySelect" class="form-control" (change)="filtercategory($event)">
-                        <option value="All" selected>All</option>
+                        <option value="All" selected>Tous</option>
                         <option  value="{{category.nomCatalogue}}"*ngFor="let category of categories" >{{category.nomCatalogue}}</option>
                     </select>
                 </nav>

@@ -46,6 +46,8 @@ const routes: Routes = [
   children: [
   {path:'dashboard',component:DashboardComponent},
     { path: 'addproduct', component: AddproductComponent },
+    {path:'faq',component:FaqComponent},
+
     { path: 'addcategory', component: AddcategoryComponent },
     { path: 'updatecategory/:id', component: UpdatecategoryComponent },
     { path: 'contactadmin', component: ContactadminComponent },

@@ -46,6 +46,10 @@
                                     (click)="show()" style="font-size:2px;height: 40px;width: 40px;margin-left: 140px;"> 
                             </div>
                         </ng-container>
+                        <ng-container *ngIf="isLoggedIn && client.id  !== 1">
+                            <button type="button"   (click)="logout()" class="blanc"><b>Se déconnecter</b></button>
+
+                        </ng-container>
                         
                         <ng-container *ngIf="!isLoggedIn">
                             <!-- Afficher les boutons "Sign in" et "Register" -->
@@ -77,7 +81,7 @@
                             <a  (click)="logout()" class="sub-menu-link">
                                 <img
                                     src="https://static.vecteezy.com/system/resources/previews/000/575/503/original/vector-logout-sign-icon.jpg"style="font-size:24px; background-color:#FF6F61">
-                                <p>LogOut</p>
+                                <p>Se déconnecter</p>
                             </a>
                          </div>
                     </div>

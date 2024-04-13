@@ -21,30 +21,32 @@
         </div>
     </header>
     
-    
     <div class="dashboard-container">
         <div class="sidebar">
             <ul>
-                <li><a routerLink="/admin/dashboard"style="color:#FF6F61;">Dashboard</a></li>
-
-                <li><a routerLink="/admin/categorie">Categories</a></li>
+                <li><a routerLink="/admin/dashboard" style="color:#FF6F61;" >Tableau de bord</a></li>
+    
+                <li><a routerLink="/admin/categorie">Catégories</a></li>
                 
                 <li><a routerLink="/admin/newsletter" >Newsletter</a></li>
                 
-                <li><a routerLink="/admin/productaadmin">Articles</a></li>
-                <li><a routerLink="/admin/contactadmin" >AllContact</a></li>
-                <li><a routerLink="/admin/orders">Orders</a></li>
+                <li><a routerLink="/admin/productaadmin" >Articles</a></li>
+    
+                <li><a routerLink="/admin/contactadmin">Contacts</a></li>
+    
+                <li><a routerLink="/admin/orders">Commandes</a></li>
                 
-                <li><a routerLink="/admin/aboutclient">AllUser</a></li>
-                <li><a (click)="logout()">LogOut</a></li>
-            </ul>
+    
+                <li><a routerLink="/admin/aboutclient">Utilisateurs</a></li>
+            
+            </ul><li><a>Se déconnecter</a></li>
         </div>
     
     <div class="container-fluid">
 
         <!-- Page Heading -->
         <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
+            <h1 class="h3 mb-0 text-gray-800">Tableau de bord</h1>
            
         </div>
 
@@ -58,7 +60,7 @@
                         <div class="row no-gutters align-items-center">
                             <div class="col mr-2">
                                 <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                    Earnings (Monthly)</div>
+                                    Gains (Mensuels)</div>
                                 <div class="h5 mb-0 font-weight-bold text-gray-800">$40,000</div>
                             </div>
                             <div class="col-auto">
@@ -76,7 +78,7 @@
                         <div class="row no-gutters align-items-center">
                             <div class="col mr-2">
                                 <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
-                                    Earnings (Annual)</div>
+                                    Gains (annuels)</div>
                                 <div class="h5 mb-0 font-weight-bold text-gray-800">$215,000</div>
                             </div>
                             <div class="col-auto">
@@ -93,7 +95,7 @@
                     <div class="card-body">
                         <div class="row no-gutters align-items-center">
                             <div class="col mr-2">
-                                <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Tasks
+                                <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Tâches
                                 </div>
                                 <div class="row no-gutters align-items-center">
                                     <div class="col-auto">
@@ -123,7 +125,7 @@
                         <div class="row no-gutters align-items-center">
                             <div class="col mr-2">
                                 <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
-                                    Pending Requests</div>
+                                    Requêtes en attente</div>
                                 <div class="h5 mb-0 font-weight-bold text-gray-800">18</div>
                             </div>
                             <div class="col-auto">
@@ -145,13 +147,13 @@
                     <!-- Card Header - Dropdown -->
                     <div
                         class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                        <h6 class="m-0 font-weight-bold text-primary">Monthly website logins</h6>
+                        <h6 class="m-0 font-weight-bold text-primary">Visites mensuelles sur le site Web</h6>
                        
                     </div>
                     <!-- Card Body -->
                     <div class="card-body">
                         <div class="chart-area">
-                                  <img src="./assets/Image/courbe.png" alt="Description de l'image">
+                                  <img src="https://community.qlik.com/t5/image/serverpage/image-id/40800i33F8FF5E79A4A1F7?v=v2" alt="Description de l'image">
                         </div>
                     </div>
                 </div>
@@ -165,13 +167,14 @@
                     <!-- Card Header - Dropdown -->
                     <div
                         class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                        <h6 class="m-0 font-weight-bold text-primary">Interactions rate</h6>
+                        <h6 class="m-0 font-weight-bold text-primary">Taux d'interactions
+                        </h6>
                        
                     </div>
                     <!-- Card Body -->
                     <div class="card-body">
                         <div class="chart-pie pt-4 pb-2">
-                            <img src="./assets/Image/courbe.png" alt="Description de l'image">
+                            <img src="https://community.qlik.com/t5/image/serverpage/image-id/163422i937B308C15F437CE/image-size/medium?v=v2&px=400" alt="Description de l'image">
                         </div>
                        
                     </div>
@@ -185,14 +188,14 @@
                     <!-- Card Header - Dropdown -->
                     <div
                         class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                        <h6 class="m-0 font-weight-bold text-primary">Questions and answers rates
+                        <h6 class="m-0 font-weight-bold text-primary">Taux de questions et réponses
                         </h6>
                        
                     </div>
                     <!-- Card Body -->
                     <div class="card-body">
                         <div class="chart-pie pt-4 pb-2">
-                            <img src="./assets/Image/rectangle2.png" style="height: 200px;" alt="Description de l'image">
+                            <img src="https://community.qlik.com/t5/image/serverpage/image-id/163422i937B308C15F437CE/image-size/medium?v=v2&px=400" style="height: 200px;" alt="Description de l'image">
                         </div>
                        
                     </div>
