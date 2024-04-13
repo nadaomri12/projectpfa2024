@@ -52,7 +52,7 @@
                             </div>
                         </ng-container>
                         
-                        <ng-container *ngIf="!isLoggedIn || client?.id === 1">
+                        <ng-container *ngIf="!isLoggedIn || isAdmin">
                             <!-- Afficher les boutons "Sign in" et "Register" -->
                             <button type="button" routerLink="/login" class="move"><b>Connexion</b></button>
                             <button type="button"routerLink="/register" class="blanc"><b>Inscription</b></button>

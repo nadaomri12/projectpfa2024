@@ -14,13 +14,17 @@ export class NavbarComponent implements OnInit{
   item: number=0;
   searchInput: any;
   AfficheCard = false;
-  
+  isAdmin: boolean = false;
+
   client: any; // Correction de l'attribut clients
   categories: any;
   idclient:any
    cart:any
   constructor(private auth: LoginService, private service: SerrviceService,private cartService: CartserviceService, private router: Router) {
     this.idclient = localStorage.getItem('clientId');
+    if(this.idclient=='1'){
+      this.isAdmin=true;
+    }
    }
 
   ngOnInit(): void {
@@ -35,7 +39,7 @@ export class NavbarComponent implements OnInit{
   getUserProfileFromDatabase() {
     const userId = localStorage.getItem('clientId');
     console.log(userId);
-    if (userId !== null && userId !== undefined && userId !== 'undefined') {
+    if (userId !== null && userId !== undefined && userId !== 'undefined'&& userId!='1') {
       console.log(userId !== null && userId !== undefined);
       this.auth.getClient(userId).subscribe((client) => { // Correction de l'utilisation de userId
         this.client = client;
