@@ -5,8 +5,8 @@ COPY pom.xml .
 COPY mvnw.cmd mvnw.cmd
 COPY .mvn .mvn
 COPY src src
-RUN chmod +x ./mvnw
-RUN ./mvnw package -DSkipTests
+RUN chmod +x ./mvnw.cmd
+RUN ./mvnw.cmd package -DSkipTests
 
 FROM eclipse-temurin:20-jdk-alpine
 COPY --from=build /app/target/Backend.jar  backendpfaa.jar
