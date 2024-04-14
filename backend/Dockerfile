@@ -1,9 +1,13 @@
 FROM openjdk:21 as build
 ARG JARFILE=target/*.jar
 WORKDIR /app
-CMD ./mvnw clean package -f pom.xml
+COPY pom.xml .
+COPY mvnw .
+COPY .mvn .mvn
+COPY src src
+RUN ./mvnw package -DSkipTests
 
-FROM build
+FROM eclipse-temurin:20-jdk-alpine
 COPY --from=build /app/target/Backend.jar  backendpfaa.jar
 EXPOSE 8080
 ENTRYPOINT ["java","-jar","backendpfaa.jar"] 
