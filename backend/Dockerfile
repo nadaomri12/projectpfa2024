@@ -6,4 +6,4 @@ CMD ./mvnw clean package -f pom.xml
 FROM build
 COPY --from=build /app/target/Backend.jar  backendpfaa.jar
 EXPOSE 8080
-ENTRYPOINT ["java","-jar","backendpfaa.jar"] 
+ENTRYPOINT ["java","-jar","backendpfaa.jar"]

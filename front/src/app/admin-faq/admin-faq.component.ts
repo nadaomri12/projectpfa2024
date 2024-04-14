@@ -56,7 +56,6 @@ AddFaq() {
       },
   
       (error) => {
-        console.error('Une erreur s\'est produite lors de la suppression de l\'utilisateur :', error);
         alert("'An error occurred while deleting the FAQ")
       }
     );

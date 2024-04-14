@@ -30,7 +30,7 @@ public class FaqController {
         return ResponseEntity.ok().body(AllUsers);
     }
     //3-RemoveFaq
-    @DeleteMapping("faqs/{id}")
+    @DeleteMapping("/faqs/{id}")
     public void deleteFaqs(@PathVariable("id") long id) {
         faqService.deleteFaq(id);
     }
