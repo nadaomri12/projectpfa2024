@@ -37,6 +37,9 @@ height: 40px;
     display: flex;
 
 }
+h2{
+  text-align: center;
+}
 .navbar-nav .nav-link {
     color:white; 
 margin-right:       30px;
