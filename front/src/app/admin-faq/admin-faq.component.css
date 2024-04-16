@@ -124,7 +124,7 @@ th {
 .questions-container {
     box-shadow: 8px 8px 8px 8px rgba(0, 0, 0, 0.1); /* Add shadow effect */
     border-radius: 8px; /* Add some border radius for rounded corners */
-    width: 1000px;
+    width: 800px;
     height: 1000px;
 
     margin-top: 40px;
