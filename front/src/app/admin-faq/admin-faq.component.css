@@ -17,18 +17,6 @@ body {
     /* Ajoutez d'autres styles selon vos besoins */
 }
 
-.main-content {
-    /* Définir une largeur maximale pour éviter un débordement horizontal */
-    max-width: 100%;
-    /* Définir une marge à gauche et à droite pour centrer le contenu */
-    margin-left: auto;
-    margin-right: auto;
-    /* Augmenter la taille de la section principale */
-    width: 80%; /* Vous pouvez ajuster cette valeur selon vos besoins */
-    /* Ajouter un peu d'espace en haut et en bas */
-    padding-top: 20px;
-    padding-bottom: 20px;
-}
 
 
 .sidebar {
@@ -93,13 +81,7 @@ textarea {
     padding: 10px;
     margin-bottom: 10px;
 }
-.blanc{
-    border-radius: 20%;
-    color: black;
-    border-color: #9747FF;
-    background-color: #fff;
 
-}
 table {
     width: 100%;
     border-collapse: collapse;
@@ -136,40 +118,20 @@ th {
     box-sizing: border-box;
 }
 
-body {
-    font-family: 'DM Sans';
-    font-style: normal;
-    height: 100vh;
-    background:#fff
-    ;
-}
-.main-content{
-    margin-left: 250px;
-}
-.title {
-    text-align: center;
-    align-items: center;
-    letter-spacing: -1px;
-    color: #88B702;
-    font-weight: 700;
-    font-size: 80px;
-    line-height: 106px;
-    padding-top: 80px;
-    font-family: 'DM Sans';
-    font-style: normal;
-}
+
 
 
 .questions-container {
     box-shadow: 8px 8px 8px 8px rgba(0, 0, 0, 0.1); /* Add shadow effect */
     border-radius: 8px; /* Add some border radius for rounded corners */
-    max-width: 500px;
+    width: 1000px;
+    height: 1000px;
+
     margin-top: 40px;
-    margin-left: 100px;
 }
 
 .question {
-    border-bottom: 1px solid #9747FF;
+    border-bottom: 1px solid #FFA07A;
 }
 
 .question button {
@@ -188,7 +150,7 @@ body {
 }
 
 .question p {
-    font-size: 22px;
+    font-size: 30px;
     max-height: 0;
     opacity: 0;
     line-height: 1.5;
@@ -203,13 +165,7 @@ body {
     color: #fff;
 }
 
-.move{
-    border-radius: 20%;
-    color: black;
-    border-color: #9747FF;
-    background-color: #fff;
 
-}
 .red{
     border-radius: 20%;
     color: black;
@@ -222,15 +178,13 @@ body {
 }
 /*add this class when click*/
 .question p.show {
-    max-height: 200px;
+    max-height: 250px;
     opacity: 1;
     padding: 0px 15px 30px 15px;
-    background-color: #9747FF;
+    background-color: #FFA07A;
     color:#fff
 }
-.main-content{
-    margin-right: 30%;
-}
+
 
 .question button .d-arrow.rotate {
     transform: rotate(180deg);

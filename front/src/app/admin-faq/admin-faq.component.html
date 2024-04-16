@@ -35,7 +35,7 @@
         </ul>
     </div>
     <div class="main-content">
-        <h3 >FAQ</h3>
+        <h3  style="margin-top: 20px;">Foire Aux Questions</h3>
         <div class="questions-container">
             <div *ngFor="let qa of questionsAndAnswers">
                 <div class="row">
@@ -61,10 +61,10 @@
                 <div class="col-md-10">
                     <div class="question">
                         <button (click)="toggleQuestion($event)">
-                            <input type="text" style="border: none;" [(ngModel)]="faq.question" name="faqQuestion" required placeholder="write your faq">
+                            <input type="text" style="border: none;width: 100%; height: 40px;" [(ngModel)]="faq.question" name="faqQuestion" required placeholder="Écrivez votre FAQ">
                             <i class="fas fa-chevron-down d-arrow"></i>
                         </button>
-                        <p><input type="text" style="border:none;" [(ngModel)]="faq.answer" name="faqAnswer" placeholder="your answer" required></p>
+                        <p><input type="text" style="border:none;width: 100%; height: 40px;background-color: transparent;" [(ngModel)]="faq.answer" name="faqAnswer" placeholder="Votre réponse" required></p>
                     </div>
                 </div>
                 <div class="col-md-2">

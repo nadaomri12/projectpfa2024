@@ -24,7 +24,10 @@ body {
     font-style: normal;
 }
 
-
+h2{
+    margin-top: 20px;
+    text-align: center;
+}
 .questions-container {
     max-width: 900px;
     margin-top: 67px;

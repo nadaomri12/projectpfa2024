@@ -51,12 +51,11 @@ AddFaq() {
       () => {
         this.questionsAndAnswers = this.questionsAndAnswers.filter(faq => faq.id !== id);
   
-        console.log('Utilisateur supprimé avec succès');
-        alert("Faq deleted successfully")
+        alert("FAQ supprimée avec succès")
       },
   
       (error) => {
-        alert("'An error occurred while deleting the FAQ")
+        alert("Une erreur s'est produite lors de la suppression de la FAQ")
       }
     );
   }

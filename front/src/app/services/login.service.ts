@@ -67,7 +67,7 @@ createFaq(faq:any):Observable<any>{
 }
 
 removeFaq(id:number):Observable<any>{
-  return this.http.delete<any>(`/api/faqs${id}`);
+  return this.http.delete<any>(`/api/faqs/${id}`);
 }
  getAllCategorie():Observable<any>{
     return this.http.get<Categorie[]>('api/catalogues')
