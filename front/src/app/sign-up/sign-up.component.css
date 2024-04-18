@@ -111,7 +111,7 @@ margin-right: 10px;}
     margin-left: 200px;}
     
 .show-password-button {
-    right:  100px;
+    margin-left: 365px;
     transform: translateY(-50%);
     border: none;
     background: none;
@@ -124,6 +124,7 @@ margin-right: 10px;}
     font-size: 18px;
     /* Adjust the icon size as needed */
     color: #888;
+    margin-bottom: 56px;
     /* Adjust the icon color */
 }
 .tex{

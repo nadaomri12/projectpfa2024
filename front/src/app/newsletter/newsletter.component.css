@@ -100,7 +100,7 @@ th {
 .newsletter-form button {
     color: white;
     cursor: pointer;
-    background-color: #fff;
+    background-color: #FFA07A;
     width: 100px;
     height:40px;
     border-radius: 30px;
@@ -108,6 +108,3 @@ th {
     margin-top: 30px;
 }
 
-.newsletter-form button:hover {
-    background-color: #555;
-}

@@ -109,24 +109,23 @@ width: 200PX;
     align-items: start;
     margin-left: 350px;}
     
-.show-password-button {
-    position: absolute;
-    top: 57%;
-    right:  130px;
-    transform: translateY(-50%);
-    border: none;
-    background: none;
-    cursor: pointer;
-    padding: 0;
-    outline: none;
-}
-
-.show-password-button .fa {
-    font-size: 18px;
-    /* Adjust the icon size as needed */
-    color: #888;
-    /* Adjust the icon color */
-}
+    .show-password-button {
+        margin-left: 365px;
+        transform: translateY(-50%);
+        border: none;
+        background: none;
+        cursor: pointer;
+        padding: 0;
+        outline: none;
+    }
+    
+    .show-password-button .fa {
+        font-size: 18px;
+        /* Adjust the icon size as needed */
+        color: #888;
+        margin-bottom: 56px;
+        /* Adjust the icon color */
+    }
 .tex{
     margin-left: 150px;
 }
