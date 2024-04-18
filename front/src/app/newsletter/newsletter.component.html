@@ -12,31 +12,32 @@
     </div>
 </header>
 <div class="dashboard-container">
-
-<div  class="sidebar">
-    <ul>
-        <li><a routerLink="/admin/dashboard">Tableau de bord</a></li>
-
-        <li><a routerLink="/admin/categorie">Catégories</a></li>
-        
-        <li><a routerLink="/admin/newsletter" style="color:#FF6F61;" >Newsletter</a></li>
-        
-        <li><a routerLink="/admin/productaadmin" >Articles</a></li>
-
-        <li><a routerLink="/admin/contactadmin" >Contacts</a></li>
-
-        <li><a routerLink="/admin/orders">Commandes</a></li>
-        
-
-        <li><a routerLink="/admin/aboutclient">Utilisateurs</a></li>
+        <div class="sidebar">
+            <ul>
+                <li><a routerLink="/admin/dashboard"  >Tableau de bord</a></li>
     
-    </ul><li><a>Se déconnecter</a></li>
-    <li><a routerLink="">Accueil</a></li>
+                <li><a routerLink="/admin/categorie">Catégories</a></li>
+                
+                <li><a routerLink="/admin/newsletter" style="color:#FF6F61;" >Newsletter</a></li>
+                
+                <li><a routerLink="/admin/productaadmin" >Articles</a></li>
+    
+                <li><a routerLink="/admin/contactadmin">Contacts</a></li>
+    
+                <li><a routerLink="/admin/orders">Commandes</a></li>
+                
+    
+                <li><a routerLink="/admin/aboutclient">Utilisateurs</a></li>
+            
+            <li><a routerLink="/admin/faq">faq</a></li>
+            <li><a routerLink="">Accueil</a></li>
 
-</div>
+            </ul>
+        </div>
+    
 
 <div class="main-content">
-<h1  style="color: #2B3674; text-align: center;">Tenez vos utilisateurs informés:</h1>
+<h1  style="color: black; text-align: center;">Tenez vos utilisateurs informés:</h1>
 <form class="newsletter-form" (ngSubmit)="sendNewsletter()">
     <textarea id="body" name="body" [(ngModel)]="body" rows="4" required  placeholder="Message"></textarea>
 

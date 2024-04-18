@@ -64,7 +64,7 @@ margin-right: 10px;}
 }
 
 .form-control {
-    width: 500px;
+    width: 400px;
     padding: 12px; /* Augmenter la taille du rembourrage */
     font-size: 18px; /* Augmenter la taille de la police */
     border-radius: 10px;
@@ -111,8 +111,6 @@ margin-right: 10px;}
     margin-left: 200px;}
     
 .show-password-button {
-    position: absolute;
-    top: 100%;
     right:  100px;
     transform: translateY(-50%);
     border: none;

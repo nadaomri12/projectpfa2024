@@ -79,7 +79,6 @@ textarea {
 .blanc{
     border-radius: 20%;
     color: black;
-    border-color: #9747FF;
     background-color: #fff;
 
 }
@@ -99,13 +98,13 @@ th {
     background-color: #f2f2f2;
 }
 .newsletter-form button {
-    color: #624BFF;
+    color: white;
     cursor: pointer;
     background-color: #fff;
     width: 100px;
     height:40px;
     border-radius: 30px;
-    border-color: #9747FF;
+    border-color: #FFA07A;
     margin-top: 30px;
 }
 
