@@ -22,7 +22,7 @@ export class NewsletterComponent {
   // Injecter le FormBuilder pour créer le formulaire
   ngOnInit(): void {
 
-    this.subject = 'New information !!!!!'; // Définissez la valeur par défaut dans ngOnInit()
+    this.subject = 'Nouvelles informations '; // Définissez la valeur par défaut dans ngOnInit()
 
     this.getSubscribedUsers(); 
   }

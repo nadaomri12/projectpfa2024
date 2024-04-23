@@ -49,8 +49,7 @@ updateproduct() {
     response => {
       console.log('Product successfully updated', response);
       this.router.navigate(['/admin/productaadmin']);
-      alert("Product successfully updated")
-     
+      alert("Produit mis à jour avec succès")     
       
     },
     error => {

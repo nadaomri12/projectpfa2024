@@ -50,6 +50,8 @@ updatecommande() {
       this.router.navigate(['/admin/orders']);
       alert('État de la commande a été modifié avec succès');
       this.closePopup()
+      this.router.navigate(['/admin/orders']);
+
     },
     (error) => {
       console.error('Erreur lors de la mise à jour de la commande', error);
