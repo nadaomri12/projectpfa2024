@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { LoginService } from '../services/login.service';
 import { FAQ } from '../faq';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-admin-faq',
@@ -14,11 +15,10 @@ export class AdminFaqComponent {
    question:'',
    answer:''
   };
-  constructor( private auth: LoginService ) { } 
+  constructor( private auth: LoginService,private router: Router ) { } 
   ngOnInit(): void {
     this.getAllFaqs();
 
-console.log("heloo this faq",this.faq)
 }
   getAllFaqs(): void {
     this.auth.getAllFaqs().subscribe(data => {
@@ -33,6 +33,8 @@ AddFaq() {
         // Afficher un message de succès à l'utilisateur si nécessaire
         console.log('Article créé avec succès:', response);
         alert('FAQ created successfully'); 
+        this.router.navigate(['/admin/dashboard']);
+
         this.resetFields();
 
         },

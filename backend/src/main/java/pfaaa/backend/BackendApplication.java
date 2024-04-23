@@ -31,13 +31,13 @@ public class BackendApplication   {
 		return args -> {
 			// Vérifier si l'utilisateur Admin existe déjà
 
-			Optional<Admin> existingAdmin = adminrepo.findByEmail("admin@gmail.com");
+			Optional<Admin> existingAdmin = adminrepo.findByEmail("nadaomri2001@gmail.com");
 
 			if (existingAdmin.isEmpty()) {
 				// L'utilisateur Admin n'existe pas, nous pouvons le créer
 				var admin = RegisterRequestDto.builder()
 						.username("Admin")
-						.email("admin@gmail.com")
+						.email("nadaomri2001@gmail.com")
 						.password("admin")
 						.role(ADMIN)
 						.build();

@@ -52,7 +52,7 @@ import { FormBuilder,FormGroup,Validators } from '@angular/forms';
     
         this.auth.login(userObject).subscribe({ // Appelle la méthode login() du service d'authentification avec userObject et s'abonne à son observable
           next: (res) => { // Si la requête est réussie, exécute cette fonction de rappel
-            alert("Login Success"); // Affiche un message d'alerte avec le message de succès de la réponse
+            alert("Connexion réussie"); // Affiche un message d'alerte avec le message de succès de la réponse
             localStorage.setItem('clientId', res.userId); // Stocke l'ID du client dans le stockage local du navigateur
             console.log("clientid",res.userId)
         

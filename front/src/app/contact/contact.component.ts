@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { SerrviceService } from '../services/serrvice.service';
 import { FormBuilder,FormGroup,Validators } from '@angular/forms';
 import { Subject } from 'rxjs';
+import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
@@ -10,7 +12,7 @@ import { Subject } from 'rxjs';
 export class ContactComponent implements OnInit {
   ContactForm!: FormGroup;
  
-  constructor(private service: SerrviceService,private fb: FormBuilder,){
+  constructor(private service: SerrviceService, private router: Router,private fb: FormBuilder){
     
   }
   ngOnInit() {
@@ -37,8 +39,9 @@ export class ContactComponent implements OnInit {
   this.service.addcontact(ContactObject).subscribe(
     response => {
       console.log(ContactObject)
-      alert(" successfully created")
-     
+      alert(" Le contact a été envoyé avec succès")
+      this.router.navigate(['']);
+
       
     },
     error => {

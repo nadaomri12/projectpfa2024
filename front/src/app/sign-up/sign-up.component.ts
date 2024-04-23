@@ -74,7 +74,7 @@ OnSignUp() {
       console.log("signUpObj",signUpObj);
       this.auth.signUp(signUpObj).subscribe({
         next: (res) => {
-          alert('User registered');
+          alert('Utilisateur enregistré');
           this.SignUpForm.reset();
           this.router.navigate(['']);
         },
@@ -85,7 +85,6 @@ OnSignUp() {
     
     }
     else {
-      console.log("form is not valid");
       // Throw the error using toaster and with fields
       this.validateAllFormFields(this.SignUpForm);
       alert("Your form is invalid");

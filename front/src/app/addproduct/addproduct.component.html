@@ -1,23 +1,24 @@
 
     <div class="container">
-  <h2>add  new product</h2>
+  <h2>
+    Ajouter un nouveau produit</h2>
   <form (ngSubmit)="addprod()">
     <div class="form-group">
-      <label for="titre">Name Product :</label>
+      <label for="titre">Nom du produit</label>
       <input type="text" class="form-control" id="titre" name="titre" [(ngModel)]="product.nomProduit" required>
     </div>
     <div class="form-group">
-      <label for="description">Description :</label>
+      <label for="description">Description </label>
       <textarea class="form-control" id="description" name="description" [(ngModel)]="product.description" required></textarea>
     </div>
     
     <div class="form-group">
-      <label for="startDate">Prix :</label>
+      <label for="startDate">Prix </label>
       <input type="text" class="form-control" id="prix" name="prix" [(ngModel)]="product.prix">
     
       </div>
     <div class="form-group">
-      <label for="image">Image :</label>
+      <label for="image">Image </label>
       <input type="text" class="form-control" id="image" name="image" [(ngModel)]="product.image">
     </div>
     <div class="form-group">
@@ -45,7 +46,14 @@
   
       
       
-    <button type="submit" class="btn " style="background-color: #FF6F61;">Add Product</button>
+    <button type="submit" class="btn " style="background-color: #FF6F61;">Ajouter un produit
+
+
+
+
+
+
+    </button>
   </form>
 </div>
 
