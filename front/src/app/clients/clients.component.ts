@@ -41,7 +41,6 @@ client:any
       () => {
         console.log('Utilisateur supprimé avec succès');
         alert("Utilisateur supprimé avec succès")
-        this.location.go(this.router.url); // Recharge la page
 
       },
 
@@ -49,6 +48,8 @@ client:any
         console.error('Une erreur s\'est produite lors de la suppression de l\'utilisateur :', error);
       }
     );
+    this.router.navigate([' /admin/aboutclient']);
+
   }
 
 

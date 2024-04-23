@@ -58,7 +58,7 @@ export class HomeComponent implements OnInit {
     (response) => { // Fonction de rappel en cas de succès de la requête
 
       alert("Abonnement à la newsletter réussi"); // Affiche un message d'alerte avec le message de succès de la réponse
-      this.location.go(this.router.url); // Recharge la page
+      this.router.navigate(['']);
 
         // Traitez la réponse de l'API si nécessaire
       },
@@ -67,7 +67,9 @@ export class HomeComponent implements OnInit {
 
         // Traitez l'erreur de l'API si nécessaire
       }
-    );}}
+    );
+    this.router.navigate(['']);
+  }}
 
  
 
