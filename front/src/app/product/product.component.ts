@@ -41,10 +41,7 @@ export class ProductComponent implements OnInit {
     this.pagedProducts = this.products.slice(startIndex, startIndex + 6); // Affichez 6 produits sur la première page, 2 produits par page pour les pages suivantes
   }
 
-addtocart(product:any){
-     this.cartservice.addtoCart(product); 
-     alert('Product added to cart!');
-}
+
 pageChanged(event: any): void {
   this.pages = event;
 }
