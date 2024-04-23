@@ -37,7 +37,7 @@ export class UpdatecategoryComponent implements OnInit {
     this.service.updateCategory(this.category).subscribe(
       response => {
         alert('Catégorie mise à jour avec succès');
-        this.router.navigate(['/admin/productaadmin']);
+        this.router.navigate(['/admin/categorie']);
 
  },
       error => {

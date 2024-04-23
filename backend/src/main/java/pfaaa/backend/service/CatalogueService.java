@@ -49,14 +49,14 @@ public class CatalogueService {
     }
 
 
-    public void updatecategorie( Catalogue updatecategorie) {
+    public Catalogue updatecategorie( Catalogue updatecategorie) {
         boolean exists = catalogueRepository.existsById(updatecategorie.getIdcataloque());
 
         if (exists) {
             updatecategorie.setNomCatalogue(updatecategorie.getNomCatalogue());
             //updatecategorie.setProduits(updatecategorie.getProduits());
 
-            catalogueRepository.save(updatecategorie);
+           return catalogueRepository.save(updatecategorie);
         } else {
             throw new IllegalStateException("Client with id " +updatecategorie.getIdcataloque() + " does not exist");
         }
