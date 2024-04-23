@@ -55,12 +55,12 @@ export class HomeComponent implements OnInit {
 
     (response) => { // Fonction de rappel en cas de succès de la requête
 
-      alert("Email Subscription Successful"); // Affiche un message d'alerte avec le message de succès de la réponse
+      alert("Abonnement à la newsletter réussi"); // Affiche un message d'alerte avec le message de succès de la réponse
 
         // Traitez la réponse de l'API si nécessaire
       },
       (error) => { // Fonction de rappel en cas d'erreur de la requête
-        alert("Email Subscription Failed"); // Affiche un message d'alerte avec le message de succès de la réponse
+        alert("Échec de l'abonnement à la newsletter"); // Affiche un message d'alerte avec le message de succès de la réponse
 
         // Traitez l'erreur de l'API si nécessaire
       }

@@ -17,17 +17,7 @@ export class CartserviceService {
     this.cartItemList.next(storedCartItems);
   }
 
-  addtoCart(product: any) {
-    const currentCartItems = this.cartItemList.value;
-    currentCartItems.push({...product, quantity: 1});
-    this.cartItemList.next([...currentCartItems]);
 
-    // Sauvegarder les données du panier dans le stockage local après chaque modification
-    localStorage.setItem('cartItems', JSON.stringify(currentCartItems));
-
-    console.log('item added to cart:', product);
-  }
-  
   
   deleteitem(product: any) {
     // Obtenir la valeur actuelle du BehaviorSubject (qui semble s'appeler cartItemList)
@@ -98,24 +88,24 @@ export class CartserviceService {
  ///minhna yabda code s7i7 bl api backend
  
   AddtooCart(item:any): Observable<any> { 
-    return this.http.post<any>(`api/additem` ,item);
+    return this.http.post<any>(`/api/additem` ,item);
   }
 
   getCartbyid(id:any)
   {
-    return this.http.get(`api/cart/`+id)
+    return this.http.get(`/api/cart/`+id)
   }
  removeitemfromcart(idclient:any,idproduct:any){
-  return this.http.delete(`api/removeitem/`+idclient+'/'+idproduct)
+  return this.http.delete(`/api/removeitem/`+idclient+'/'+idproduct)
  }
 
  removeAllItem(idclient:any){
-  return this.http.delete( `api/removeallitem/`
+  return this.http.delete( `/api/removeallitem/`
   +idclient)
  }
 
  addcommande(commande:any){
-  return this.http.post( `api/addcommande`
+  return this.http.post( `/api/addcommande`
   ,commande)
  }
  getcommandes(){

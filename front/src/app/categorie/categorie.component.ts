@@ -40,7 +40,7 @@ export class CategorieComponent {
     this.service.deletcategory(categoryId).subscribe(
       response => {
         console.log('category successfully deleted', response);
-        alert("category successfully deleted")
+        alert("Catégorie supprimée avec succès")
         this.refreshProductList();
         
       },
