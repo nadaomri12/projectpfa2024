@@ -42,7 +42,7 @@ jobs:
       - name: Build backend Docker image
         run: docker build -t pfaproject.azurecr.io/backend ./backend
       
-      - name: Push backend Docker image to Azure Container Registry
+      - name: Push backeend Docker image to Azure Container Registry
         run: docker push pfaproject.azurecr.io/backend
 
   deploy:
