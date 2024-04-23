@@ -65,9 +65,8 @@ categoryChanged() {
  addprod(){
   this.Service.addproduct(this.product).subscribe(
     response => {
-      alert("product successfully created")
+      alert("Produit créé avec succès")
       this.router.navigate(['/admin/productaadmin']);
-      console.log('product successfully created', response);
       
     },
     error => {

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { SerrviceService } from '../services/serrvice.service';
 import { ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-updatecategory',
   templateUrl: './updatecategory.component.html',
@@ -14,7 +16,7 @@ export class UpdatecategoryComponent implements OnInit {
     nomCatalogue: '',
   };
 
-  constructor(private service:SerrviceService,private route:ActivatedRoute){
+  constructor(private service:SerrviceService,private route:ActivatedRoute,private router: Router){
     this.id=this.route.snapshot.paramMap.get("id");
   }
    
@@ -34,9 +36,10 @@ export class UpdatecategoryComponent implements OnInit {
   updatecategory() {
     this.service.updateCategory(this.category).subscribe(
       response => {
-        console.log('Category successfully updated', this.category);
-        alert('Category successfully updated');
-      },
+        alert('Catégorie mise à jour avec succès');
+        this.router.navigate(['/admin/productaadmin']);
+
+ },
       error => {
         console.error('Error updating category', error);
         alert('Error updating category');
