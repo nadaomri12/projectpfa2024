@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { SerrviceService } from '../services/serrvice.service';
 import { EmailService } from '../services/email.service';
 import { Router } from '@angular/router';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-home',
@@ -15,7 +16,7 @@ export class HomeComponent implements OnInit {
 
   products: any; 
   
-  constructor(private Service:SerrviceService,private router: Router, private fb: FormBuilder,private  auth:EmailService){
+  constructor(private Service:SerrviceService,private router: Router, private fb: FormBuilder,private location: Location,private  auth:EmailService){
   
  }
  ngOnInit() {
@@ -57,7 +58,7 @@ export class HomeComponent implements OnInit {
     (response) => { // Fonction de rappel en cas de succès de la requête
 
       alert("Abonnement à la newsletter réussi"); // Affiche un message d'alerte avec le message de succès de la réponse
-      this.router.navigate(['']);
+      this.location.go(this.router.url); // Recharge la page
 
         // Traitez la réponse de l'API si nécessaire
       },

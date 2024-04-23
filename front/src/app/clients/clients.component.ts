@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { LoginService } from '../services/login.service';
 import { Router } from '@angular/router';
+import { Location } from '@angular/common';
+
 @Component({
   selector: 'app-clients',
   templateUrl: './clients.component.html',
@@ -29,7 +31,7 @@ client:any
     this.auth.signOut();
   }
 
-  constructor(private auth: LoginService ,private router: Router){
+  constructor(private auth: LoginService ,private router: Router,private location: Location){
 
   }
 
@@ -39,7 +41,8 @@ client:any
       () => {
         console.log('Utilisateur supprimé avec succès');
         alert("Utilisateur supprimé avec succès")
-        this.router.navigate(['/admin/aboutclient']);
+        this.location.go(this.router.url); // Recharge la page
+
       },
 
       (error) => {
