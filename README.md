@@ -2,7 +2,7 @@
 The development of an e-commerce website and its deployment onto a virtual machine, facilitated by setting up a CI pipeline with GitHub Actions.
  ## Built with
 - **Front-End:** Angular, Bootstrap, TypeScript.
-- **Backend:** Spring Boot
+- **Backend:** Spring Boot,Spring Security
 - **DataBases:** Mysql.
 - **DevOps:** Docker, GitHub Actions, Git.
 - ## Demo
