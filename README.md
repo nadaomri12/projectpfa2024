@@ -1,2 +1,3 @@
 About the project
-<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/942130175?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Fin d'année"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+[![Watch the video](https://github.com/Emnahad/Management-plateform-for-new-recruits/blob/main/Screenshot%202023-07-13%20003843.png?raw=true)](https://player.vimeo.com/video/942130175)
+
